@@ -1,5 +1,21 @@
 # MEHRAB.7w7 — Car Edits
 
+## CJ x Grove Street — VFX Edit (YouTube / Instagram / Facebook / WhatsApp)
+
+<img src="CJ_GroveStreet_VFX_Edit/CJ_GroveStreet_cover.jpg" width="320" alt="CJ Grove Street cover">
+
+ادیت VFX عمودی از سی‌جی و رفیق کاپشن‌سبزش (GTA San Andreas) — فلش و تایتل کرومی، پاپ‌آپ کاراکترها، شیشه‌شکسته، گرداب، متلاشی شدن با ذرات، پوکه‌های طلایی، آتیش دور سوژه و تایتل نئونی آخر؛ همه روی بیت آهنگ.
+
+| فایل | توضیح |
+|---|---|
+| [`CJ_GroveStreet_VFX_4K_60fps.mp4`](CJ_GroveStreet_VFX_Edit/CJ_GroveStreet_VFX_4K_60fps.mp4) | ویدیوی نهایی برای یوتیوب، اینستاگرام، فیسبوک و استوری واتساپ — عمودی 2160×3840 (4K)، ۶۰ فریم، ۱۴.۲ ثانیه |
+| [`CJ_GroveStreet_cover.jpg`](CJ_GroveStreet_VFX_Edit/CJ_GroveStreet_cover.jpg) | کاور (4K عمودی) |
+| [`YouTube_title_description.txt`](CJ_GroveStreet_VFX_Edit/YouTube_title_description.txt) | عنوان، توضیحات، کرِدیت‌ها، تگ‌ها و کپشن کوتاه اینستا/فیسبوک |
+
+**دانلود:** روی اسم فایل بزن و بعد دکمه‌ی دانلود (Download raw file) رو بزن.
+
+---
+
 ## Mercedes-AMG CLS 63 — 3D Typography Edit (YouTube Shorts)
 
 <img src="CLS63_AMG_Edit/CLS63_AMG_cover.jpg" width="320" alt="CLS 63 AMG cover">

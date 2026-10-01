@@ -4,7 +4,7 @@
 
 <img src="NightRide_PoliceMode_Edit/NightRide_PoliceMode_cover.jpg" width="320" alt="Night Ride Police Mode cover">
 
-ادیت جوون‌پسند عمودی از استوری موتورسواری شبانه — رابط اینستاگرام و استیکرها حذف شده؛ تایتل کرومی NIGHT RIDE، زوم‌پانچ و فلش روی بیت، اسپلیت‌اسکرین، فریز با خط‌دور نئونی، شمارش معکوس 3-2-1 قبل از دراپ، تایتل POLICE MODE با چراغ قرمز/آبی، اسلوموشن چرخ و تایتل آخر MEHRAB.7w7؛ همه روی بیت آهنگ خود استوری (۱۳۰ BPM).
+ادیت جوون‌پسند عمودی از استوری موتورسواری شبانه — رابط اینستاگرام و استیکرها حذف شده؛ شروع با یه صفحه‌ی مستطیلی نئونی که از وسط فضا و ستاره‌ها پرواز می‌کنه جلو و دوربین شیرجه می‌زنه توش، تایتل کرومی NIGHT RIDE، زوم‌پانچ و فلش روی بیت، چرخش سه‌بعدی صفحه وسط فضا، فریز با خط‌دور نئونی، شمارش معکوس 3-2-1 قبل از دراپ، تایتل POLICE MODE با چراغ قرمز/آبی، اسلوموشن چرخ و تایتل آخر MEHRAB.7w7؛ همه روی بیت آهنگ خود استوری (۱۳۰ BPM).
 
 | فایل | توضیح |
 |---|---|
@@ -12,7 +12,7 @@
 | [`NightRide_PoliceMode_cover.jpg`](NightRide_PoliceMode_Edit/NightRide_PoliceMode_cover.jpg) | کاور (4K عمودی) |
 | [`YouTube_title_description.txt`](NightRide_PoliceMode_Edit/YouTube_title_description.txt) | عنوان، توضیحات، کرِدیت‌ها، تگ‌ها و کپشن کوتاه اینستا/فیسبوک |
 
-**دانلود:** روی اسم فایل بزن و بعد دکمه‌ی دانلود (Download raw file) رو بزن.
+**⬇️ دانلود مستقیم (یه کلیک):** [ویدیو 4K](https://github.com/Mehrabshahidi7777/Supra/raw/main/NightRide_PoliceMode_Edit/NightRide_PoliceMode_4K_60fps.mp4) · [کاور](https://github.com/Mehrabshahidi7777/Supra/raw/main/NightRide_PoliceMode_Edit/NightRide_PoliceMode_cover.jpg) · [متن عنوان و توضیحات](https://github.com/Mehrabshahidi7777/Supra/raw/main/NightRide_PoliceMode_Edit/YouTube_title_description.txt)
 
 ---
 

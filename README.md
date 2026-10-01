@@ -1,5 +1,21 @@
 # MEHRAB.7w7 — Car Edits
 
+## NIGHT RIDE 🚨 Police Mode — Bike Edit (YouTube / Instagram / Facebook / WhatsApp)
+
+<img src="NightRide_PoliceMode_Edit/NightRide_PoliceMode_cover.jpg" width="320" alt="Night Ride Police Mode cover">
+
+ادیت جوون‌پسند عمودی از استوری موتورسواری شبانه — رابط اینستاگرام و استیکرها حذف شده؛ تایتل کرومی NIGHT RIDE، زوم‌پانچ و فلش روی بیت، اسپلیت‌اسکرین، فریز با خط‌دور نئونی، شمارش معکوس 3-2-1 قبل از دراپ، تایتل POLICE MODE با چراغ قرمز/آبی، اسلوموشن چرخ و تایتل آخر MEHRAB.7w7؛ همه روی بیت آهنگ خود استوری (۱۳۰ BPM).
+
+| فایل | توضیح |
+|---|---|
+| [`NightRide_PoliceMode_4K_60fps.mp4`](NightRide_PoliceMode_Edit/NightRide_PoliceMode_4K_60fps.mp4) | ویدیوی نهایی برای یوتیوب، اینستاگرام، فیسبوک و استوری واتساپ — عمودی 2160×3840 (4K)، ۶۰ فریم، ۲۸.۳ ثانیه |
+| [`NightRide_PoliceMode_cover.jpg`](NightRide_PoliceMode_Edit/NightRide_PoliceMode_cover.jpg) | کاور (4K عمودی) |
+| [`YouTube_title_description.txt`](NightRide_PoliceMode_Edit/YouTube_title_description.txt) | عنوان، توضیحات، کرِدیت‌ها، تگ‌ها و کپشن کوتاه اینستا/فیسبوک |
+
+**دانلود:** روی اسم فایل بزن و بعد دکمه‌ی دانلود (Download raw file) رو بزن.
+
+---
+
 ## CJ x Grove Street — VFX Edit (YouTube / Instagram / Facebook / WhatsApp)
 
 <img src="CJ_GroveStreet_VFX_Edit/CJ_GroveStreet_cover.jpg" width="320" alt="CJ Grove Street cover">

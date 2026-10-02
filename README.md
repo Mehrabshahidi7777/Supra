@@ -11,9 +11,11 @@
 | [`MEHRAB7w7_profile_square.png`](MEHRAB7w7_Logo/MEHRAB7w7_profile_square.png) | برای عکس پروفایل یوتیوب، اینستاگرام و فیس‌بوک (2048×2048) — خود اپ دایره‌ش می‌کنه |
 | [`MEHRAB7w7_logo_circle.png`](MEHRAB7w7_Logo/MEHRAB7w7_logo_circle.png) | لوگوی دایره‌ای با گوشه‌های شفاف (2048×2048) |
 | [`MEHRAB7w7_logo_transparent.png`](MEHRAB7w7_Logo/MEHRAB7w7_logo_transparent.png) | فقط خود صورتک بدون پس‌زمینه — برای واترمارک و روی ویدیو |
+| [`MEHRAB7w7_YouTube_banner_2560x1440.png`](MEHRAB7w7_Logo/MEHRAB7w7_YouTube_banner_2560x1440.png) | بنر (Banner image) کانال یوتیوب — 2560×1440، لوگو و اسم توی محدوده‌ی امن 1546×423 |
+| [`MEHRAB7w7_Facebook_cover_1640x624.png`](MEHRAB7w7_Logo/MEHRAB7w7_Facebook_cover_1640x624.png) | کاور (Cover photo) فیس‌بوک — 1640×624، محتوا وسطه که توی گوشی هم بریده نشه |
 | [`MEHRAB7w7_logo_circle.svg`](MEHRAB7w7_Logo/MEHRAB7w7_logo_circle.svg) | نسخه‌ی وکتور (هر سایزی بدون افت کیفیت) |
 
-**⬇️ دانلود مستقیم:** [پروفایل](https://github.com/Mehrabshahidi7777/Supra/raw/main/MEHRAB7w7_Logo/MEHRAB7w7_profile_square.png) · [دایره‌ای](https://github.com/Mehrabshahidi7777/Supra/raw/main/MEHRAB7w7_Logo/MEHRAB7w7_logo_circle.png) · [بدون پس‌زمینه](https://github.com/Mehrabshahidi7777/Supra/raw/main/MEHRAB7w7_Logo/MEHRAB7w7_logo_transparent.png)
+**⬇️ دانلود مستقیم:** [پروفایل](https://github.com/Mehrabshahidi7777/Supra/raw/main/MEHRAB7w7_Logo/MEHRAB7w7_profile_square.png) · [دایره‌ای](https://github.com/Mehrabshahidi7777/Supra/raw/main/MEHRAB7w7_Logo/MEHRAB7w7_logo_circle.png) · [بدون پس‌زمینه](https://github.com/Mehrabshahidi7777/Supra/raw/main/MEHRAB7w7_Logo/MEHRAB7w7_logo_transparent.png) · [بنر یوتیوب](https://github.com/Mehrabshahidi7777/Supra/raw/main/MEHRAB7w7_Logo/MEHRAB7w7_YouTube_banner_2560x1440.png) · [کاور فیس‌بوک](https://github.com/Mehrabshahidi7777/Supra/raw/main/MEHRAB7w7_Logo/MEHRAB7w7_Facebook_cover_1640x624.png)
 
 ---
 

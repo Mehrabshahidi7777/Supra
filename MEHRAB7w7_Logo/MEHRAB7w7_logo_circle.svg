@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 400 400">
+<defs>
+<linearGradient id="ch" x1="0" y1="140" x2="0" y2="300" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#FFFFFF"/><stop offset="0.45" stop-color="#D3DDEA"/><stop offset="0.52" stop-color="#7A889B"/>
+<stop offset="0.6" stop-color="#EEF4FB"/><stop offset="1" stop-color="#A9B8CC"/>
+</linearGradient>
+<radialGradient id="halo" cx="200" cy="200" r="215" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#2E99FF" stop-opacity="0.32"/><stop offset="1" stop-color="#2E99FF" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="bgv" cx="200" cy="170" r="240" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#101724"/><stop offset="1" stop-color="#080B11"/>
+</radialGradient>
+<filter id="bl" filterUnits="userSpaceOnUse" x="-100" y="-100" width="600" height="600"><feGaussianBlur stdDeviation="9"/></filter>
+<filter id="bl2" filterUnits="userSpaceOnUse" x="-100" y="-100" width="600" height="600"><feGaussianBlur stdDeviation="22"/></filter>
+<clipPath id="cc"><circle cx="200" cy="200" r="200"/></clipPath>
+</defs><g clip-path="url(#cc)"><rect width="400" height="400" fill="url(#bgv)"/><rect width="400" height="400" fill="url(#halo)"/>
+<ellipse cx="102" cy="250" rx="28" ry="12" fill="#2E99FF" opacity="0.35"/>
+<ellipse cx="298" cy="250" rx="28" ry="12" fill="#2E99FF" opacity="0.35"/>
+<g filter="url(#bl2)" fill="none" stroke="#2E99FF" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" opacity="0.45">
+<path d="M108 148 H176 L140 216"/><path d="M224 148 H292 L256 216"/><path d="M146 268 Q166 302 186 272 Q200 252 214 272 Q234 302 254 268"/>
+</g>
+<g filter="url(#bl)" fill="none" stroke="#2E99FF" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" opacity="0.95">
+<path d="M108 148 H176 L140 216"/><path d="M224 148 H292 L256 216"/><path d="M146 268 Q166 302 186 272 Q200 252 214 272 Q234 302 254 268"/>
+</g>
+<g fill="none" stroke="url(#ch)" stroke-width="24" stroke-linecap="round" stroke-linejoin="round">
+<path d="M108 148 H176 L140 216"/><path d="M224 148 H292 L256 216"/><path d="M146 268 Q166 302 186 272 Q200 252 214 272 Q234 302 254 268"/>
+</g></g>
+<circle cx="200" cy="200" r="198" fill="none" stroke="#1E2836" stroke-width="4"/></svg>

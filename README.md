@@ -1,5 +1,22 @@
 # MEHRAB.7w7 — Car Edits
 
+## 🖤 لوگوی MEHRAB.7w7 (صورتک 7w7)
+
+<img src="MEHRAB7w7_Logo/MEHRAB7w7_logo_circle.png" width="200" alt="MEHRAB.7w7 logo">
+
+دو تا 7 چشم‌های زیرچشمی و w لبخند شیطونی — نئون آبی و کرومی.
+
+| فایل | توضیح |
+|---|---|
+| [`MEHRAB7w7_profile_square.png`](MEHRAB7w7_Logo/MEHRAB7w7_profile_square.png) | برای عکس پروفایل یوتیوب، اینستاگرام و فیس‌بوک (2048×2048) — خود اپ دایره‌ش می‌کنه |
+| [`MEHRAB7w7_logo_circle.png`](MEHRAB7w7_Logo/MEHRAB7w7_logo_circle.png) | لوگوی دایره‌ای با گوشه‌های شفاف (2048×2048) |
+| [`MEHRAB7w7_logo_transparent.png`](MEHRAB7w7_Logo/MEHRAB7w7_logo_transparent.png) | فقط خود صورتک بدون پس‌زمینه — برای واترمارک و روی ویدیو |
+| [`MEHRAB7w7_logo_circle.svg`](MEHRAB7w7_Logo/MEHRAB7w7_logo_circle.svg) | نسخه‌ی وکتور (هر سایزی بدون افت کیفیت) |
+
+**⬇️ دانلود مستقیم:** [پروفایل](https://github.com/Mehrabshahidi7777/Supra/raw/main/MEHRAB7w7_Logo/MEHRAB7w7_profile_square.png) · [دایره‌ای](https://github.com/Mehrabshahidi7777/Supra/raw/main/MEHRAB7w7_Logo/MEHRAB7w7_logo_circle.png) · [بدون پس‌زمینه](https://github.com/Mehrabshahidi7777/Supra/raw/main/MEHRAB7w7_Logo/MEHRAB7w7_logo_transparent.png)
+
+---
+
 ## Michael Scofield — Prison Break Edit (YouTube / Instagram / Facebook / WhatsApp)
 
 <img src="Michael_Scofield_Edit/Michael_Scofield_cover.jpg" width="320" alt="Michael Scofield cover">

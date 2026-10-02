@@ -9,10 +9,11 @@
 | فایل | توضیح |
 |---|---|
 | [`Michael_Scofield_4K_60fps.mp4`](Michael_Scofield_Edit/Michael_Scofield_4K_60fps.mp4) | ویدیوی نهایی (نسخه‌ی ۳) برای یوتیوب، اینستاگرام، فیسبوک و استوری واتساپ — عمودی 2160×3840 (4K)، ۶۰ فریم، ۱۸.۵ ثانیه |
+| [`Michael_Scofield_1080p_60fps_YouTube.mp4`](Michael_Scofield_Edit/Michael_Scofield_1080p_60fps_YouTube.mp4) | نسخه‌ی 1080×1920، ۶۰ فریم، بیت‌ریت بالا — مخصوص آپلود یوتیوب شورتس (کیفیتش بعد از آپلود نمی‌خوابه) |
 | [`Michael_Scofield_cover.jpg`](Michael_Scofield_Edit/Michael_Scofield_cover.jpg) | کاور (4K عمودی) |
 | [`YouTube_title_description.txt`](Michael_Scofield_Edit/YouTube_title_description.txt) | عنوان، توضیحات، کرِدیت‌ها، تگ‌ها و کپشن کوتاه اینستا/فیسبوک |
 
-**⬇️ دانلود مستقیم (یه کلیک):** [ویدیو 4K](https://github.com/Mehrabshahidi7777/Supra/raw/main/Michael_Scofield_Edit/Michael_Scofield_4K_60fps.mp4) · [کاور](https://github.com/Mehrabshahidi7777/Supra/raw/main/Michael_Scofield_Edit/Michael_Scofield_cover.jpg) · [متن عنوان و توضیحات](https://github.com/Mehrabshahidi7777/Supra/raw/main/Michael_Scofield_Edit/YouTube_title_description.txt)
+**⬇️ دانلود مستقیم (یه کلیک):** [ویدیو 4K](https://github.com/Mehrabshahidi7777/Supra/raw/main/Michael_Scofield_Edit/Michael_Scofield_4K_60fps.mp4) · [ویدیو 1080p یوتیوب](https://github.com/Mehrabshahidi7777/Supra/raw/main/Michael_Scofield_Edit/Michael_Scofield_1080p_60fps_YouTube.mp4) · [کاور](https://github.com/Mehrabshahidi7777/Supra/raw/main/Michael_Scofield_Edit/Michael_Scofield_cover.jpg) · [متن عنوان و توضیحات](https://github.com/Mehrabshahidi7777/Supra/raw/main/Michael_Scofield_Edit/YouTube_title_description.txt)
 
 ---
 

@@ -1,5 +1,21 @@
 # MEHRAB.7w7 — Car Edits
 
+## Michael Scofield — Prison Break Edit (YouTube / Instagram / Facebook / WhatsApp)
+
+<img src="Michael_Scofield_Edit/Michael_Scofield_cover.jpg" width="320" alt="Michael Scofield cover">
+
+ادیت عمودی از مایکل اسکافیلد (Prison Break) به سبک miot7 — شروع سیاه‌وسفید با زندان و تایتل MICHAEL SCOFIELD، کات روی هر دو بیت، ترنزیشن گرداب، کارت سه‌بعدی با خط‌دور آتیشی، زوم‌بلر و ویپ، فلش سیاه‌وسفید، خط‌دور نورانی آبی روی شات آخر؛ همه روی بیت آهنگ.
+
+| فایل | توضیح |
+|---|---|
+| [`Michael_Scofield_4K_60fps.mp4`](Michael_Scofield_Edit/Michael_Scofield_4K_60fps.mp4) | ویدیوی نهایی برای یوتیوب، اینستاگرام، فیسبوک و استوری واتساپ — عمودی 2160×3840 (4K)، ۶۰ فریم، ۱۵.۲ ثانیه |
+| [`Michael_Scofield_cover.jpg`](Michael_Scofield_Edit/Michael_Scofield_cover.jpg) | کاور (4K عمودی) |
+| [`YouTube_title_description.txt`](Michael_Scofield_Edit/YouTube_title_description.txt) | عنوان، توضیحات، کرِدیت‌ها، تگ‌ها و کپشن کوتاه اینستا/فیسبوک |
+
+**⬇️ دانلود مستقیم (یه کلیک):** [ویدیو 4K](https://github.com/Mehrabshahidi7777/Supra/raw/main/Michael_Scofield_Edit/Michael_Scofield_4K_60fps.mp4) · [کاور](https://github.com/Mehrabshahidi7777/Supra/raw/main/Michael_Scofield_Edit/Michael_Scofield_cover.jpg) · [متن عنوان و توضیحات](https://github.com/Mehrabshahidi7777/Supra/raw/main/Michael_Scofield_Edit/YouTube_title_description.txt)
+
+---
+
 ## NIGHT RIDE 🚨 Police Mode — Bike Edit (YouTube / Instagram / Facebook / WhatsApp)
 
 <img src="NightRide_PoliceMode_Edit/NightRide_PoliceMode_cover.jpg" width="320" alt="Night Ride Police Mode cover">

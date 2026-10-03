@@ -19,6 +19,22 @@
 
 ---
 
+## BMW M3 & M4 at Night — Cinematic Car Edit (YouTube / Instagram / Facebook / WhatsApp)
+
+<img src="BMW_M3_M4_Night_Edit/BMW_M3_M4_Night_cover.jpg" width="320" alt="BMW M3 M4 Night Edit cover">
+
+ادیت کپ‌کاتی خودم که درست و کامل شد — کادر ۹:۱۶ استاندارد (بدون نوار بالا و پایین)، پس‌زمینه‌ی سیاه با ذرات نورانی که آروم حرکت می‌کنن و با بیت روشن می‌شن (جای پس‌زمینه‌ی سیاه و پارچه‌ی ساتن)، رفع پرش یک‌فریمی، زوم‌پانچ و گلیچ رنگی روی کات‌ها، و به جای ۴ ثانیه‌ی سیاه آخر: دو کارت سه‌بعدی از BMW مشکی با نور آبی و تایتل نورانی MEHRAB.7w7. آیدی MEHRAB.7w7 پایین کل ویدیو هم هست. آهنگ همون آهنگ خودمه.
+
+| فایل | توضیح |
+|---|---|
+| [`BMW_M3_M4_Night_Edit_1080p.mp4`](BMW_M3_M4_Night_Edit/BMW_M3_M4_Night_Edit_1080p.mp4) | ویدیوی نهایی برای یوتیوب، اینستاگرام، فیسبوک و استوری واتساپ — عمودی 1080×1920، ۳۰ فریم، ۱۵.۷ ثانیه، کیفیت بالا |
+| [`BMW_M3_M4_Night_cover.jpg`](BMW_M3_M4_Night_Edit/BMW_M3_M4_Night_cover.jpg) | کاور (عمودی 1080×1920) |
+| [`YouTube_title_description.txt`](BMW_M3_M4_Night_Edit/YouTube_title_description.txt) | عنوان و توضیحات انگلیسی مشترک برای همه‌ی پلتفرم‌ها |
+
+**⬇️ دانلود مستقیم (یه کلیک):** [ویدیو](https://github.com/Mehrabshahidi7777/Supra/raw/main/BMW_M3_M4_Night_Edit/BMW_M3_M4_Night_Edit_1080p.mp4) · [کاور](https://github.com/Mehrabshahidi7777/Supra/raw/main/BMW_M3_M4_Night_Edit/BMW_M3_M4_Night_cover.jpg) · [متن عنوان و توضیحات](https://github.com/Mehrabshahidi7777/Supra/raw/main/BMW_M3_M4_Night_Edit/YouTube_title_description.txt)
+
+---
+
 ## Michael Scofield — Prison Break Edit (YouTube / Instagram / Facebook / WhatsApp)
 
 <img src="Michael_Scofield_Edit/Michael_Scofield_cover.jpg" width="320" alt="Michael Scofield cover">

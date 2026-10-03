@@ -1,5 +1,7 @@
 # MEHRAB.7w7 — Car Edits
 
+**📝 متن شروع چت جدید:** [`CHAT_START.txt`](CHAT_START.txt) · [دانلود مستقیم](https://github.com/Mehrabshahidi7777/Supra/raw/main/CHAT_START.txt) — اولِ هر چت جدید اینو بده تا بدونه چنل، روش ادیت، برنامه‌ی ۳۰ شبه و شب فعلی چیه.
+
 ## 🖤 لوگوی MEHRAB.7w7 (صورتک 7w7)
 
 <img src="MEHRAB7w7_Logo/MEHRAB7w7_logo_circle.png" width="200" alt="MEHRAB.7w7 logo">
@@ -25,13 +27,16 @@
 
 ادیت کپ‌کاتی خودم که درست و کامل شد — کادر ۹:۱۶ استاندارد (بدون نوار بالا و پایین)، پس‌زمینه‌ی سیاه با ذرات نورانی که آروم حرکت می‌کنن و با بیت روشن می‌شن (جای پس‌زمینه‌ی سیاه و پارچه‌ی ساتن)، رفع پرش یک‌فریمی، زوم‌پانچ و گلیچ رنگی روی کات‌ها، و به جای ۴ ثانیه‌ی سیاه آخر: دو کارت سه‌بعدی از BMW مشکی با نور آبی و تایتل نورانی MEHRAB.7w7. آیدی MEHRAB.7w7 پایین کل ویدیو هم هست. آهنگ همون آهنگ خودمه.
 
+**نسخه‌ی v3 (شب ۱ برنامه‌ی ۳۰ شبه، ۱۱ مهر ۱۴۰۵):** با کلوزآپ چراغ درست قبل از دراپ آهنگ شروع می‌شه (۴ ثانیه‌ی آروم اول حذف شد)، اوترو MEHRAB.7w7 حدود ۱ ثانیه‌ست و صدا روی ‎-14 LUFS تنظیم شده. این نسخه برای انتشاره.
+
 | فایل | توضیح |
 |---|---|
-| [`BMW_M3_M4_Night_Edit_1080p.mp4`](BMW_M3_M4_Night_Edit/BMW_M3_M4_Night_Edit_1080p.mp4) | ویدیوی نهایی برای یوتیوب، اینستاگرام، فیسبوک و استوری واتساپ — عمودی 1080×1920، ۳۰ فریم، ۱۵.۷ ثانیه، کیفیت بالا |
+| [`BMW_M3_M4_Night_Edit_v3_1080p.mp4`](BMW_M3_M4_Night_Edit/BMW_M3_M4_Night_Edit_v3_1080p.mp4) | **نسخه‌ی انتشار (v3)** — عمودی 1080×1920، ۳۰ فریم، ۱۰.۵ ثانیه، کیفیت بالا |
+| [`BMW_M3_M4_Night_Edit_1080p.mp4`](BMW_M3_M4_Night_Edit/BMW_M3_M4_Night_Edit_1080p.mp4) | نسخه‌ی قبلی (v2) — ۱۵.۷ ثانیه |
 | [`BMW_M3_M4_Night_cover.jpg`](BMW_M3_M4_Night_Edit/BMW_M3_M4_Night_cover.jpg) | کاور (عمودی 1080×1920) |
 | [`YouTube_title_description.txt`](BMW_M3_M4_Night_Edit/YouTube_title_description.txt) | عنوان و توضیحات انگلیسی مشترک برای همه‌ی پلتفرم‌ها |
 
-**⬇️ دانلود مستقیم (یه کلیک):** [ویدیو](https://github.com/Mehrabshahidi7777/Supra/raw/main/BMW_M3_M4_Night_Edit/BMW_M3_M4_Night_Edit_1080p.mp4) · [کاور](https://github.com/Mehrabshahidi7777/Supra/raw/main/BMW_M3_M4_Night_Edit/BMW_M3_M4_Night_cover.jpg) · [متن عنوان و توضیحات](https://github.com/Mehrabshahidi7777/Supra/raw/main/BMW_M3_M4_Night_Edit/YouTube_title_description.txt)
+**⬇️ دانلود مستقیم (یه کلیک):** [ویدیو v3](https://github.com/Mehrabshahidi7777/Supra/raw/main/BMW_M3_M4_Night_Edit/BMW_M3_M4_Night_Edit_v3_1080p.mp4) · [کاور](https://github.com/Mehrabshahidi7777/Supra/raw/main/BMW_M3_M4_Night_Edit/BMW_M3_M4_Night_cover.jpg) · [متن عنوان و توضیحات](https://github.com/Mehrabshahidi7777/Supra/raw/main/BMW_M3_M4_Night_Edit/YouTube_title_description.txt)
 
 ---
 

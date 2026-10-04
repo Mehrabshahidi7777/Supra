@@ -15,14 +15,17 @@ Recording A/V offset ≈ +0.1 s (visual cuts late) — always cut on the audio g
 * Song from the reference recording, trimmed 1.12 → 19.1914 s (vocal entry on grid beat 1.150; end = 3 beats after the
   outro start, so the loop seam stays in time). Outro starts 18.0868 s (tape-stop from there).
 * Hook: red 3D "SMASH OR PASS?" (kit/lib.py plate) over the strongest shot from frame 0 until the 3rd cut.
+* Feedback (v3): the user noticed car #1 was never shown properly from the front and asked for its first shot to be
+  head-on — fixed (G1 now the GT R head-on; old rear-wing opener moved to G4, V8 badge shot dropped).
+  Lesson: give every car a clear front shot, ideally its first one.
 * Numbers 1–5 + model name top-left in each car's colour → comments ("which number do you smash?").
 * Pops: GrabCut cutouts (kit/cutout.py) of pink x1@9.85, BMW x3@4.6, orange p06@15.3, red p09@32.3.
 
 ## Clip files ($WORK/clips) → user's uploads
 | name | upload (recording time) | content | used |
 |---|---|---|---|
-| p01 | …_002013_Pinterest | AMG GT Black Series at dealership (Yavuz Cevik) | G3 |
-| p02 | …_002149_Pinterest | AMG GT R green, forest (Luxlife; Carola Daimler Cars) | G1 G2 G4 G5 |
+| p01 | …_002013_Pinterest | AMG GT Black Series at dealership (Yavuz Cevik) | G3 (front 3/4 approach, 18.90) |
+| p02 | …_002149_Pinterest | AMG GT R green, forest (Luxlife; Carola Daimler Cars) | G1 (head-on front, 32.70) G2 G4 G5 |
 | p03 | …_002456_Pinterest | BMW M4 CSL fog lot + drift (XMotors) | B2 B3 B4 |
 | p04 | …_002618_Pinterest | BMW convoy at dusk, dark garage | – |
 | p05 | …_002805_Pinterest | McLaren 720S orange | – |

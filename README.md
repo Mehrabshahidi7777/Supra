@@ -21,6 +21,22 @@
 
 ---
 
+## BMW M3, M4 & M5 — Lost in Space (YouTube / Instagram / Facebook / WhatsApp)
+
+<img src="BMW_M_Space_Edit/BMW_M_Lost_in_Space_cover.jpg" width="320" alt="BMW M Lost in Space cover">
+
+**شب ۲ برنامه‌ی ۳۰ شبه (۱۲ مهر ۱۴۰۵)** — به سبک ویدیوی رفرنس «Cars in Space and Backrooms». پرده‌ی اول توی فضاست: M3 مشکی با چراغ قرمز روی پنل گرید شناور کنار سیاره و پرتو آبی، M4 هولوگرامی قرمز، نوشتن نئونی MEHRAB.7w7 روی پنل، M4 روبه‌رو روی باند نورانی و زوم پرتابی M3. بعد ترنزیشن گلیچ با نوارهای سفید و پرده‌ی دوم توی تاریکی: M3، M5 CS، جلوپنجره‌ی M4، M5 با چشم‌های چشمک‌زن، M5 Competition و چراغ عقب M4. آخرش گلیچ، سیاهی، فلش سفید ماشین و تایتل MEHRAB.7w7 که دوباره به شات اول لوپ می‌خوره. آهنگ همون آهنگ رفرنسه که روی بیت از ۹ به ۱۶ ثانیه رسیده؛ همه‌ی کات‌ها روی بیته.
+
+| فایل | توضیح |
+|---|---|
+| [`BMW_M_Lost_in_Space_1080p.mp4`](BMW_M_Space_Edit/BMW_M_Lost_in_Space_1080p.mp4) | **نسخه‌ی انتشار** — عمودی 1080×1920، ۳۰ فریم، ۱۶.۱ ثانیه، صدا ‎-14 LUFS |
+| [`BMW_M_Lost_in_Space_cover.jpg`](BMW_M_Space_Edit/BMW_M_Lost_in_Space_cover.jpg) | کاور (عمودی 1080×1920) |
+| [`YouTube_title_description.txt`](BMW_M_Space_Edit/YouTube_title_description.txt) | عنوان و توضیحات انگلیسی مشترک برای همه‌ی پلتفرم‌ها |
+
+**⬇️ دانلود مستقیم (یه کلیک):** [ویدیو](https://github.com/Mehrabshahidi7777/Supra/raw/main/BMW_M_Space_Edit/BMW_M_Lost_in_Space_1080p.mp4) · [کاور](https://github.com/Mehrabshahidi7777/Supra/raw/main/BMW_M_Space_Edit/BMW_M_Lost_in_Space_cover.jpg) · [متن عنوان و توضیحات](https://github.com/Mehrabshahidi7777/Supra/raw/main/BMW_M_Space_Edit/YouTube_title_description.txt)
+
+---
+
 ## BMW M3 & M4 at Night — Cinematic Car Edit (YouTube / Instagram / Facebook / WhatsApp)
 
 <img src="BMW_M3_M4_Night_Edit/BMW_M3_M4_Night_cover.jpg" width="320" alt="BMW M3 M4 Night Edit cover">

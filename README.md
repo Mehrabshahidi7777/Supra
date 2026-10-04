@@ -21,6 +21,22 @@
 
 ---
 
+## SMASH OR PASS — Red Title Scene (YouTube / Instagram / Facebook / WhatsApp)
+
+<img src="SmashOrPass_Red_Scene/SmashOrPass_Red_cover.jpg" width="320" alt="Smash or Pass cover">
+
+صحنه‌ی گرافیکی قرمز از روی ویدیوی رفرنس یوتیوب (ترند «اسمش اُر پَس» با گربه‌ها). از فریم اول کلمه‌ی SMASH با فلش، موج ضربه و رعد و برق قرمز روی صفحه کوبیده می‌شه، بعد OR نئونی و PASS میان. متن سه‌بعدی و براقِ قرمز با درخشش، قلب نئونی که روی دراپ آهنگ ظاهر می‌شه و با بیت می‌تپه، و آخر کار SMASH و PASS نوبتی روشن می‌شن و قلب روی PASS می‌شکنه. پایین صفحه اکولایزر قرمزِ خود آهنگ هست، با ذرات، پرتوهای نور، گلیچ و لرزش دوربین روی بیت. اوترو MEHRAB.7w7 حدود ۱ ثانیه‌ست و روی بیت به اول ویدیو لوپ می‌خوره. آهنگ همون آهنگ ویدیوی رفرنسه.
+
+| فایل | توضیح |
+|---|---|
+| [`SmashOrPass_Red_1080p.mp4`](SmashOrPass_Red_Scene/SmashOrPass_Red_1080p.mp4) | **نسخه‌ی انتشار** — عمودی 1080×1920، ۳۰ فریم، ۱۴.۵ ثانیه، صدا ‎-14 LUFS |
+| [`SmashOrPass_Red_cover.jpg`](SmashOrPass_Red_Scene/SmashOrPass_Red_cover.jpg) | کاور (عمودی 1080×1920) |
+| [`YouTube_title_description.txt`](SmashOrPass_Red_Scene/YouTube_title_description.txt) | عنوان و توضیحات انگلیسی مشترک برای همه‌ی پلتفرم‌ها |
+
+**⬇️ دانلود مستقیم (یه کلیک):** [ویدیو](https://github.com/Mehrabshahidi7777/Supra/raw/main/SmashOrPass_Red_Scene/SmashOrPass_Red_1080p.mp4) · [کاور](https://github.com/Mehrabshahidi7777/Supra/raw/main/SmashOrPass_Red_Scene/SmashOrPass_Red_cover.jpg) · [متن عنوان و توضیحات](https://github.com/Mehrabshahidi7777/Supra/raw/main/SmashOrPass_Red_Scene/YouTube_title_description.txt)
+
+---
+
 ## BMW M3, M4 & M5 — Lost in Space (YouTube / Instagram / Facebook / WhatsApp)
 
 <img src="BMW_M_Space_Edit/BMW_M_Lost_in_Space_cover.jpg" width="320" alt="BMW M Lost in Space cover">

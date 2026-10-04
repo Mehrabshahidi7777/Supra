@@ -2,6 +2,8 @@
 
 **📝 متن شروع چت جدید:** [`CHAT_START.txt`](CHAT_START.txt) · [دانلود مستقیم](https://github.com/Mehrabshahidi7777/Supra/raw/main/CHAT_START.txt) — اولِ هر چت جدید اینو بده تا بدونه چنل، روش ادیت، برنامه‌ی ۳۰ شبه و شب فعلی چیه.
 
+**🧰 جعبه‌ابزار ادیت:** [`edit_toolkit`](edit_toolkit/README.md) — همه‌ی اسکریپت‌ها، افکت‌ها، روش کار و ایده‌ها یه‌جا، برای ساختن ادیت‌های بعدی توی هر چت جدید.
+
 ## 🖤 لوگوی MEHRAB.7w7 (صورتک 7w7)
 
 <img src="MEHRAB7w7_Logo/MEHRAB7w7_logo_circle.png" width="200" alt="MEHRAB.7w7 logo">

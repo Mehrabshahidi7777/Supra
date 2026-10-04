@@ -21,6 +21,22 @@
 
 ---
 
+## Smash or Pass? 5 Dream Cars — Night 3 (YouTube / Instagram / Facebook / WhatsApp)
+
+<img src="Night3_SmashOrPass_DreamCars/Night3_SmashOrPass_cover.jpg" width="320" alt="Smash or Pass 5 Dream Cars cover">
+
+**شب ۳ برنامه‌ی ۳۰ شبه (۱۳ مهر ۱۴۰۵)**، به سبک ویدیوی رفرنس FXNGVXK. پنج ماشین با پنج رنگ پشت هم میان: ۱ سبز (AMG GT)، ۲ صورتی (فراری)، ۳ مشکی با چراغ زرد (M4 CSL)، ۴ نارنجی (مک‌لارن) و ۵ قرمز (لامبورگینی). از فریم اول سؤال قرمز SMASH OR PASS? روی قوی‌ترین شات میاد و هر ماشین یه شماره داره تا بیننده توی کامنت بنویسه کدوم رو SMASH می‌کنه و کدوم رو PASS. بعد از دراپ آهنگ، هر دو ضرب یه کات داریم. بین شات‌های هر ماشین ترنزیشن تند و تار هست و ماشین بعدی با خط‌دور نورانی به رنگ خودش از وسط شات قبلی بیرون میاد. رنگ‌ها تند و تیره‌ان، با لبه‌های تار مثل لنز. آخرش MEHRAB.7w7 سفید و درخشان با عوض شدن فونت میاد و روی بیت به اول ویدیو لوپ می‌خوره. آهنگ همون آهنگ رفرنسه.
+
+| فایل | توضیح |
+|---|---|
+| [`Night3_SmashOrPass_DreamCars_1080p.mp4`](Night3_SmashOrPass_DreamCars/Night3_SmashOrPass_DreamCars_1080p.mp4) | **نسخه‌ی انتشار** — عمودی 1080×1920، ۳۰ فریم، ۱۸ ثانیه، صدا ‎-14 LUFS |
+| [`Night3_SmashOrPass_cover.jpg`](Night3_SmashOrPass_DreamCars/Night3_SmashOrPass_cover.jpg) | کاور (عمودی 1080×1920) |
+| [`YouTube_title_description.txt`](Night3_SmashOrPass_DreamCars/YouTube_title_description.txt) | عنوان و توضیحات انگلیسی مشترک برای همه‌ی پلتفرم‌ها، به‌اضافه‌ی کرِدیت آهنگ و کلیپ‌ها |
+
+**⬇️ دانلود مستقیم (یه کلیک):** [ویدیو](https://github.com/Mehrabshahidi7777/Supra/raw/main/Night3_SmashOrPass_DreamCars/Night3_SmashOrPass_DreamCars_1080p.mp4) · [کاور](https://github.com/Mehrabshahidi7777/Supra/raw/main/Night3_SmashOrPass_DreamCars/Night3_SmashOrPass_cover.jpg) · [متن عنوان و توضیحات](https://github.com/Mehrabshahidi7777/Supra/raw/main/Night3_SmashOrPass_DreamCars/YouTube_title_description.txt)
+
+---
+
 ## SMASH OR PASS — Red Title Scene (YouTube / Instagram / Facebook / WhatsApp)
 
 <img src="SmashOrPass_Red_Scene/SmashOrPass_Red_cover.jpg" width="320" alt="Smash or Pass cover">

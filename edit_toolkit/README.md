@@ -43,6 +43,7 @@ edit_toolkit/
     night3_smash_or_pass/   footage montage engine (render3.py) + shots.py + notes.md  ← template for car montages
     red_title_scene/        pure-graphics title scene (render.py) + song analysis data + notes.md
     night4_finger_rhythm/   "slide your finger along the rhythm": beat-locked finger dot + brush reveal montage (render4.py)
+    night5_reveal/          "ELA PEIDA FUNK" chrome-logo reveal: reference analysis, beat grid, shot map (notes.md, ref_sheet.jpg) — build pending
 ```
 Heavy data never goes in the repo: set `export WORK=/home/claude/work_edit` and keep `clips/`, `seg/`, `cut/`, `check/`,
 songs and renders there. Python deps are preinstalled (numpy, scipy, opencv, pillow, matplotlib) + ffmpeg.
@@ -116,7 +117,8 @@ README section with raw/main direct links · update the night log in CHAT_START.
 - Raw vs Edit: same clip, wipe line on the drop from flat raw to the full grade.
 - Night Drive: slow → fast speed ramp into the drop, neon light streaks, rain/fog grade, taillight glow.
 - Pure Engine Sound: spectrum bars + rev counter graphic synced to the engine audio.
-- MEHRAB.7w7 Reveal: glitch + flicker logo, then the car reveal behind it.
+- MEHRAB.7w7 Reveal (Night 5, in progress): one cut per beat, next car pops in as a sticker, then a white flash and
+  MEHRAB.7w7 in spiky chrome slams over the silver car for 4 beats — see `projects/night5_reveal/notes.md`.
 - Slide your finger (done, Night 4): reuse the engine with any path (zig-zag, circle) or for characters; the finger
   can also "bring" text, numbers or a Rate-This-Car score.
 - Always first understand the reference's mechanism (what the viewer does, what causes what) and keep it; make only the

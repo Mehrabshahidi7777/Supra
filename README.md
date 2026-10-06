@@ -23,6 +23,22 @@
 
 ---
 
+## Slide Your Finger Along the Rhythm 👆 BMW Edit — Night 4 (YouTube / Instagram / Facebook / WhatsApp)
+
+<img src="Night4_SlideYourFinger_BMW/Night4_SlideYourFinger_cover.jpg" width="320" alt="Slide your finger along the rhythm BMW edit cover">
+
+**شب ۴ برنامه‌ی ۳۰ شبه (۱۴ مهر ۱۴۰۵)**، به‌جای Raw vs Edit (که رفت شب ۳۱)، با ترند «slide your finger along the rhythm». بیننده انگشتش رو دقیقاً مثل دایره‌ی نئونی حرکت می‌ده و انگار با همین حرکت انگشت ماشین‌ها رو میاره. دایره عین رفرنس روی هر ضرب یه حرکت می‌کنه: بالا راست، پایین راست، پایین چپ، پایین راست و دوباره بالا راست. هر بار که روی ضرب می‌رسه موج ضربه و جرقه می‌زنه و تصویر کمی می‌لرزه. پس‌زمینه دود تیره‌ایه که با نور دایره روشن می‌شه، با خط‌های راهنمای کم‌رنگ و دایره‌ی هدف بعدی که چشمک می‌زنه. نزدیک دراپ خط‌های سرعت میان و آخرین کشیدن انگشت، M5 مشکی با جلوپنجره‌ی نورانی رو از خود دایره رنگ می‌کنه تو کادر؛ روی دراپ فلش، موج ضربه‌ی بزرگ و گلیچ داریم. توی مونتاژ یه دایره‌ی کوچیک‌تر به حرکتش ادامه می‌ده و هر حرکت انگشت ماشین بعدی رو با لبه‌ی نئونی میاره (۱۳ شات BMW، هر ضرب یه کات، با زوم و لرزش، خط‌های نئونی روی ضرب، فلش و گلیچ). آخرش MEHRAB.7w7 با عوض شدن فونت میاد، آهنگ مثل نوار کاست آروم و کلفت می‌شه و دایره و متن برمی‌گردن سر جاشون که ویدیو بی‌درز لوپ بخوره. آهنگ همون آهنگ رفرنسه (Clima Lindo – Slowed).
+
+| فایل | توضیح |
+|---|---|
+| [`Night4_SlideYourFinger_BMW_1080p.mp4`](Night4_SlideYourFinger_BMW/Night4_SlideYourFinger_BMW_1080p.mp4) | **نسخه‌ی انتشار** — عمودی 1080×1920، ۳۰ فریم، ۱۷.۷ ثانیه، صدا ‎-14 LUFS |
+| [`Night4_SlideYourFinger_cover.jpg`](Night4_SlideYourFinger_BMW/Night4_SlideYourFinger_cover.jpg) | کاور (عمودی 1080×1920) |
+| [`YouTube_title_description.txt`](Night4_SlideYourFinger_BMW/YouTube_title_description.txt) | عنوان و توضیحات انگلیسی برای هر پلتفرم، به‌اضافه‌ی کرِدیت آهنگ و کلیپ‌ها |
+
+**⬇️ دانلود مستقیم (یه کلیک):** [ویدیو](https://github.com/Mehrabshahidi7777/Supra/raw/main/Night4_SlideYourFinger_BMW/Night4_SlideYourFinger_BMW_1080p.mp4) · [کاور](https://github.com/Mehrabshahidi7777/Supra/raw/main/Night4_SlideYourFinger_BMW/Night4_SlideYourFinger_cover.jpg) · [متن عنوان و توضیحات](https://github.com/Mehrabshahidi7777/Supra/raw/main/Night4_SlideYourFinger_BMW/YouTube_title_description.txt)
+
+---
+
 ## Smash or Pass? 5 Dream Cars — Night 3 (YouTube / Instagram / Facebook / WhatsApp)
 
 <img src="Night3_SmashOrPass_DreamCars/Night3_SmashOrPass_cover.jpg" width="320" alt="Smash or Pass 5 Dream Cars cover">

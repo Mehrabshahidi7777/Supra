@@ -16,6 +16,8 @@
 - بیرون اومدن ماشین بعدی با خط‌دور نورانی به رنگ خودش
 - رنگ تند و تیره با لبه‌های تار مثل لنز
 - سؤال SMASH OR PASS؟ با شماره‌ی ماشین‌ها برای کامنت
+- ترند «انگشتت رو با ریتم بکش»: دایره‌ی نئونی که روی هر ضرب حرکت می‌کنه و هر حرکت انگشت ماشین بعدی رو از خود دایره میاره تو کادر (شب ۴)
+- خط‌های نئونی روی خطوط خود ماشین روی ضرب
 - اوترو MEHRAB.7w7 با عوض شدن فونت که لوپ می‌خوره
 - پایان آهنگِ آروم و کلفت (مثل نوار کاست)
 - صدای ‎-14 LUFS
@@ -39,6 +41,7 @@ edit_toolkit/
   projects/
     night3_smash_or_pass/   footage montage engine (render3.py) + shots.py + notes.md  ← template for car montages
     red_title_scene/        pure-graphics title scene (render.py) + song analysis data + notes.md
+    night4_finger_rhythm/   "slide your finger along the rhythm": beat-locked finger dot + brush reveal montage (render4.py)
 ```
 Heavy data never goes in the repo: set `export WORK=/home/claude/work_edit` and keep `clips/`, `seg/`, `cut/`, `check/`,
 songs and renders there. Python deps are preinstalled (numpy, scipy, opencv, pillow, matplotlib) + ffmpeg.
@@ -94,6 +97,11 @@ in CHAT_START.txt · the user liked the tape-stop "deep" ending (Night 3) — of
 | glitch slices, invert-red flash, power flicker, flash/exposure punch | `render.py render()` |
 | beat-synced envelopes (pulse / decay_sum / energy) | `render.py` |
 | tape-stop deep ending, -14 LUFS | `kit/audio_finish.py` |
+| beat-locked finger dot (path, slides landing on beats), lane rails, corner targets, swipe trail | `night4 render4.py move_state / dot_pos / draw_orb / draw_rails` |
+| brush reveal painted from the dot (next shot appears from the finger, neon edge) | `night4 render4.py reveal_mask / blend_reveal` |
+| neon edges of the footage on the beat (Sobel + bloom), light sweep | `night4 render4.py neon_edges / leak` |
+| seamless loop (outro rebuilds frame 0; smoke/dust on a loop clock) | `night4 render4.py outro_frame` |
+| loop-spliced song from a Shorts recording (find loop length + silent gap) | `night4 notes.md` |
 
 ### Idea bank (mix with each new reference)
 - Smash or Pass with numbers (done, Night 3) → also works for characters or "which wheel / which colour".
@@ -103,4 +111,8 @@ in CHAT_START.txt · the user liked the tape-stop "deep" ending (Night 3) — of
 - Night Drive: slow → fast speed ramp into the drop, neon light streaks, rain/fog grade, taillight glow.
 - Pure Engine Sound: spectrum bars + rev counter graphic synced to the engine audio.
 - MEHRAB.7w7 Reveal: glitch + flicker logo, then the car reveal behind it.
+- Slide your finger (done, Night 4): reuse the engine with any path (zig-zag, circle) or for characters; the finger
+  can also "bring" text, numbers or a Rate-This-Car score.
+- Always first understand the reference's mechanism (what the viewer does, what causes what) and keep it; make only the
+  effects heavier (user feedback on Night 4).
 - Always: strongest shot + hook text in frame 0, colour story between subjects, 1 s looping outro, tape-stop ending.

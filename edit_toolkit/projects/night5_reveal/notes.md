@@ -81,6 +81,11 @@ effect (frames 307–381 = 10.23–12.70 s: ~0.18 black that snaps open into a s
 (840,0)-(0,1500), lit side upper-left) is removed from the GT3 shots (our band-free frames there) and rebuilt
 parametrically on the end card: black 0.07 s -> snap open to their diagonal (0.08 s) -> hold half-lit -> full open by
 +0.62 s -> loop zoom.
+**Then: "the end lags, it must be smooth"** — the 30 fps end card had two near-frozen holds (the reveal hold + the static
+name). Fix: 60 fps final (`capcut/final60.py`): intro = their filter (`lut_intro.npy`) on our 60 fps band-free frames,
+their 30 fps frames only where their CapCut effects are (frames 130–152, 193–237, 243–271), our 60 fps frames elsewhere,
+end card rendered fresh: reveal keys `END_REVEAL_T/E` (PCHIP, never stops), slow push-in `END_PUSH`, glint `END_GLINT`,
+no kick punches during the tape-stop (`logo_layer(punch=False)`); `capcut/redo_end.py` re-renders only the end card.
 
 ## Clips ($WORK/clips) — user's uploads (6 Oct, Pinterest recordings, pin box (20,96,1060,1936))
 | name | content | used |

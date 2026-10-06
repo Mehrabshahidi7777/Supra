@@ -420,18 +420,18 @@ LOGO_STROKE = cv2.GaussianBlur(cv2.dilate((LOGO.m > 0.3).astype(np.float32), np.
 KICKS = [S.beat(k) for k in range(0, 19)]
 
 
-def logo_layer(f, T, cy, t_in, dark=0.0, base_scale=0.93, env_k=0.12, glow_k=1.0):
+def logo_layer(f, T, cy, t_in, dark=0.0, base_scale=0.93, env_k=0.12, glow_k=1.0, sweeps=None, punch=True):
     """composite the chrome logo centred at (540, cy); slam at t_in"""
     q = T - t_in
     slam = ease_out_cubic(min(1.0, q / 0.11))
     sc = base_scale * (1.55 - 0.55 * slam)
-    for kt in KICKS:                                     # punch on every kick after the slam
+    for kt in (KICKS if punch else ()):                  # punch on every kick after the slam
         if t_in + 0.2 < kt <= T:
             sc *= 1 + 0.035 * np.exp(-(T - kt) / 0.08)
     sc *= 1 + 0.012 * np.sin(2 * np.pi * (T - t_in) / (4 * S.B))
     off = 0.10 * (T - t_in) / (4 * S.B) + 0.05 * np.sin(2 * np.pi * (T - t_in) / (2 * S.B))
     sweep = None
-    for st in (t_in + 2 * S.B, t_in + 6 * S.B):           # light band sweeps across on two beats
+    for st in (sweeps if sweeps is not None else (t_in + 2 * S.B, t_in + 6 * S.B)):   # light band sweeps
         if st <= T < st + 0.35:
             sweep = -0.1 + 1.25 * (T - st) / 0.35
     rgb, a = LOGO.shade(off, dark, sweep)
@@ -581,6 +581,26 @@ def montage_frame(T, fi):
     return f, sh * 0.0, 0.0
 
 
+from scipy.interpolate import PchipInterpolator
+_U = None
+_REVEAL = PchipInterpolator(S.END_REVEAL_T, S.END_REVEAL_E)
+
+
+def end_reveal_mask(lt):
+    """the user's CapCut 'black that opens' effect, moved onto the ID reveal: black, then a diagonal light edge (their
+    angle: through (840,0)-(0,1500), lit side upper-left) opens across the frame with continuous motion (PCHIP keys)"""
+    global _U
+    if _U is None:
+        yy_, xx_ = np.mgrid[0:H, 0:W].astype(np.float32)
+        _U = (1500 * xx_ + 840 * yy_) / np.hypot(1500, 840)
+    t_last = S.END_REVEAL_T[-1]
+    if lt >= t_last:
+        return 1.0
+    e = float(_REVEAL(max(0.0, lt)))
+    lit = 1 - smoothstep(e - 45, e + 45, _U)
+    return (S.END_DARK + (1 - S.END_DARK) * lit)[..., None]
+
+
 def outro_frame(T, fi):
     rng = np.random.default_rng(77 + fi)
     lt = T - S.T_OUT
@@ -592,10 +612,14 @@ def outro_frame(T, fi):
     f = up(bg4)
     yy = np.linspace(0, 1, H, dtype=np.float32)[:, None, None]
     f = f + EMBER[None, None] * 0.10 * smoothstep(0.55, 1.0, yy)
-    f = logo_layer(f, T, S.END_CY, S.T_OUT, dark=0.0, base_scale=0.95, env_k=0.0, glow_k=0.45)
+    push = 1 + S.END_PUSH * lt / dur                               # slow continuous push-in: the card never freezes
+    f = logo_layer(f, T, S.END_CY, S.T_OUT, dark=0.0, base_scale=0.95 * push, env_k=0.0, glow_k=0.45,
+                   sweeps=(S.T_OUT + S.END_GLINT,), punch=False)   # no kick punches: the song is tape-stopping here
     if S.EMBERS:
         f = draw_embers(f, T, 1.25)
     f = rgb_split(f, 12 * np.exp(-lt / 0.09))                      # slam: colour fringe + shake, no white flash
+    if S.END_DARK_REVEAL:
+        f = f * end_reveal_mask(lt)
     t0 = dur - S.LOOP_OUT                                          # loop: the end card zooms through, then a clean
     if lt >= t0:                                                   # cut to frame 0 (on the song's loop point)
         f = zoom_fx(f, ease_in((lt - t0) / S.LOOP_OUT), W / 2, S.END_CY)

@@ -83,6 +83,13 @@ TRANS = {
     19: ('zoom', 0.20, 0.0, None),          # last GT3 shot -> chrome MEHRAB.7w7 end card
 }
 LOOP_OUT = 0.22                # end card zooms through at the very end -> clean cut to frame 0 (seamless loop)
+END_PUSH = 0.07                # end card: slow continuous push-in on the chrome name (no frozen frames)
+END_GLINT = 0.44               # light band sweeps across the chrome name this long after the slam
+# the user's CapCut 'black that opens' effect, moved from the GT3 shots onto the ID reveal (their request):
+END_DARK_REVEAL = True
+END_DARK = 0.18                # darkness of the closed part (measured on their effect)
+END_REVEAL_T = [0.0, 0.05, 0.20, 0.42, 0.66]      # seconds after the slam
+END_REVEAL_E = [-150, -150, 733, 1000, 2150]      # diagonal edge position (px along the diagonal; 733 = their edge)
 WM_CY = 1452                   # MEHRAB.7w7 line: ~3/4 height, above the YouTube / Instagram / Facebook overlays
 BAND_Y = 0.205                 # reference look: dark band over the top ~20 % of the frame
 BAND = False                   # user: the blurred dark band at the top looked like a fault -> off

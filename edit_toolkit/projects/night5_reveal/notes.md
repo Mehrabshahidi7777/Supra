@@ -80,9 +80,9 @@ effects, and MEHRAB.7w7 in place of the creator's "ZS3" logo. `ref_sheet.jpg` = 
 1. Porsche 911 GT3 RS (992), blue, in snow — 3 clips: wide, front close-up with headlight, rear moving/drifting.
 2. McLaren P1, orange — 4 clips: parked (several together is best), coming at the camera, rear with the wing, one
    with the whole car visible (for the sticker).
-3. Porsche 911 GT3 RS (992), black — 4 clips: low rear with the big wing and red light bar, side, interior with the
-   door open, one with the whole car visible.
-4. Porsche 911 GT3 (991), silver — 6–8 clips (8 beats on screen): front, rear with the exhausts, bonnet close-up,
-   side with the wheel, one with the whole car visible.
+3. Porsche 911 GT3 RS (992), black — 4 clips: low rear with the big wing, red rear light bar close, interior with
+   the door open, wing close-up, one with the whole car visible.
+4. Porsche 911 GT3 (991), silver — 6–8 clips (8 beats on screen): front far and close, rear with the exhausts and
+   wing, bonnet close-up, side with the wheel, one with the whole car visible.
 Every clip 2–5 s, vertical if possible, no text, best quality, sent as files. If no blue one in snow turns up, any
 colour of the same car in snow works.

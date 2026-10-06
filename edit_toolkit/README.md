@@ -49,13 +49,17 @@ pip/npm/web downloads are usually blocked → no librosa/rembg/new fonts; everyt
 Fonts on the box: Inter Display Black (`kit/lib.py FONT`), Inter Black, TeX Gyre Heros Cn, DejaVu, Poppins, Latin Modern, Chorus.
 
 ### House rules (from CHAT_START.txt — re-read it)
-1080×1920, 30 fps, high quality · MEHRAB.7w7 (no @) at the bottom of the whole video **and** as the end card ·
-first second = strongest full-frame shot (no black, no small shot) · outro ≈ 1 s and the video must loop on the beat ·
--14 LUFS · reply in Persian, titles/descriptions in English (one title + 3-line description + 5 hashtags for YouTube,
-Instagram and Facebook, line 3 = "New car edit every night 🔥 Follow MEHRAB.7w7"; WhatsApp status = always only the
-Persian follow text from CHAT_START.txt, no title) · upload every final edit to this repo
-(folder + cover + YouTube_title_description.txt + README section with raw/main direct links) · update the night log
-in CHAT_START.txt · the user liked the tape-stop "deep" ending (Night 3) — offer/keep it.
+Master = vertical 4K 2160×3840 at 60 fps (smooth), very high quality; also a lighter 1080p copy for chat (< 30 MiB) ·
+MEHRAB.7w7 (no @) on the whole video, low but **not stuck to the bottom and not in the middle**: above the YouTube /
+Instagram / Facebook overlays (≈ 3/4 of the height, centred) — and again as the end card · clean frames: no people,
+shadows, text or watermarks (inpaint or crop them out), only the car and scenery · variety of shots and transitions ·
+first second = strongest full-frame shot (unless the trend itself starts differently) · outro ≈ 1 s and the video must
+loop on the beat · -14 LUFS · reply in Persian; titles, descriptions and hashtags for YouTube, Instagram and Facebook
+always in English (one title + 3-line description + 5 hashtags, line 3 = "New car edit every night 🔥 Follow
+MEHRAB.7w7", credits for the song and the clip sources); WhatsApp status = always only the Persian follow text from
+CHAT_START.txt, no title · every edit gets its own repo folder: cover + title/description text + the 4K video, plus a
+README section with raw/main direct links · update the night log in CHAT_START.txt · the user liked the tape-stop
+"deep" ending (Night 3) — offer/keep it · understand the reference's mechanism first and keep it (Night 4 lesson).
 
 ### Workflow
 1. **Reference**: copy to `$WORK/ref.mp4`.

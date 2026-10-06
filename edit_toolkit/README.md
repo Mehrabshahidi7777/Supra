@@ -51,8 +51,9 @@ Fonts on the box: Inter Display Black (`kit/lib.py FONT`), Inter Black, TeX Gyre
 ### House rules (from CHAT_START.txt — re-read it)
 1080×1920, 30 fps, high quality · MEHRAB.7w7 (no @) at the bottom of the whole video **and** as the end card ·
 first second = strongest full-frame shot (no black, no small shot) · outro ≈ 1 s and the video must loop on the beat ·
--14 LUFS · reply in Persian, titles/descriptions in English (one title + 3-line description + 5 hashtags for all
-platforms, line 3 = "New car edit every night 🔥 Follow MEHRAB.7w7") · upload every final edit to this repo
+-14 LUFS · reply in Persian, titles/descriptions in English (one title + 3-line description + 5 hashtags for YouTube,
+Instagram and Facebook, line 3 = "New car edit every night 🔥 Follow MEHRAB.7w7"; WhatsApp status = always only the
+Persian follow text from CHAT_START.txt, no title) · upload every final edit to this repo
 (folder + cover + YouTube_title_description.txt + README section with raw/main direct links) · update the night log
 in CHAT_START.txt · the user liked the tape-stop "deep" ending (Night 3) — offer/keep it.
 

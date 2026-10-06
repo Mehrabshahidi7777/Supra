@@ -75,7 +75,12 @@ echo on the GT3 reveal (8.4–9.0; it mirrors / duplicates the baked-in ID) and 
 `capcut/fix_band.py cc.mp4 v5_1080p.mp4 n5_noaudio_v6.mp4 out.mp4` keeps their frames everywhere and only rebuilds the
 band rows (y < 405): intro -> 3D LUT of their filter (`capcut/lut3d.py`, fitted on rows below the band, pooled over the
 intro, `lut_intro.npy`) applied to (no-band - band); ending -> local gain field; effects / untouched -> plain delta.
-Phase check: their frame k == our 60 fps frame 2k. The ID line is re-stamped white in the dark ending.
+Phase check: their frame k == our 60 fps frame 2k. (v1 re-stamped the ID line white in the dark ending.)
+**Then: "the black effect that opens stays too long — put it where the ID comes"** -> `capcut/move_dark.py`: their dark
+effect (frames 307–381 = 10.23–12.70 s: ~0.18 black that snaps open into a static diagonal light split, edge through
+(840,0)-(0,1500), lit side upper-left) is removed from the GT3 shots (our band-free frames there) and rebuilt
+parametrically on the end card: black 0.07 s -> snap open to their diagonal (0.08 s) -> hold half-lit -> full open by
++0.62 s -> loop zoom.
 
 ## Clips ($WORK/clips) — user's uploads (6 Oct, Pinterest recordings, pin box (20,96,1060,1936))
 | name | content | used |

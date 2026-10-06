@@ -485,7 +485,7 @@ def soft_clip(f):
 
 
 def finish(f, fi, shake=(0.0, 0.0), band_line=0.0, band=True):
-    if band:
+    if band and S.BAND:
         sm = cv2.resize(f[:BAND_Y + 40], (W // 8, (BAND_Y + 40) // 8), interpolation=cv2.INTER_AREA)
         bl = cv2.resize(cv2.GaussianBlur(sm, (0, 0), 1.5), (W, BAND_Y + 40), interpolation=cv2.INTER_LINEAR)
         reg = f[:BAND_Y + 40]

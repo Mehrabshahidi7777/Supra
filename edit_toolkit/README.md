@@ -119,6 +119,7 @@ README section with raw/main direct links · update the night log in CHAT_START.
 | chrome logo slam over footage (dark stroke + shadow, scene reflection via normals, punch on kicks) — titles / end cards, not the ID mid-video | `night5 render5.py logo_layer` |
 | clean frames: inpaint a red street sign (wall texture copy) / blank dealer or licence plates (letters -> plate shading) | `night5 render5.py remove_red_sign / blank_plate` |
 | re-render frame ranges and splice them into a finished render (fast fixes) | `night5 splice.py` |
+| user re-edited our video in CapCut: remove something we baked in (e.g. the top band) from THEIR export while keeping their filters/effects (3D LUT of their filter + band delta) | `night5 capcut/fix_band.py, lut3d.py` |
 | scene transitions without white flashes: zoom-through (radial blur, custom centre), spin (spin blur), timed to peak on the cut | `night5 render5.py zoom_fx / spin_fx / apply_trans` + `shots5.TRANS` |
 | snowy look on any clip (milky cold grade keeping the blue paint, frost edges; falling-snow particles exist but the user didn't like them) | `night5 render5.py grade_cold / draw_snow` |
 | fire ember streaks + bokeh embers (user didn't like dotty particles — ask first) | `night5 render5.py draw_embers` |
@@ -136,7 +137,9 @@ README section with raw/main direct links · update the night log in CHAT_START.
 - MEHRAB.7w7 Reveal (done, Night 5): one cut per beat, next car pops in as a sticker, white flash on the last car,
   spiky chrome MEHRAB.7w7 as the end card. User feedback: **no big ID in the middle of the video** (only the bottom
   line + the end, `shots5.MID_LOGO = False`), **no dotty particles** (falling snow, embers, stars: `SNOW`/`EMBERS`
-  off) and **no white blinking flashes** — use real transitions (zoom-through, spin, whip) between scenes instead.
+  off), **no white blinking flashes** — use real transitions (zoom-through, spin, whip) between scenes instead — and
+  **no dark/blurred band at the top** (`shots5.BAND = False`). The user sometimes adds their own CapCut filters/effects
+  on top of our edit (Night 5: published their CapCut version) — keep the ID off the effects' path if possible.
   The cold grade itself was liked. Reuse `logo5.py` for any chrome title (car names, "SMASH OR PASS", …).
 - Slide your finger (done, Night 4): reuse the engine with any path (zig-zag, circle) or for characters; the finger
   can also "bring" text, numbers or a Rate-This-Car score.

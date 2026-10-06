@@ -64,6 +64,18 @@ reference's blur-in whip; impact on cuts = punch + shake + a short colour fringe
   `apply_trans` reads `TRANS[k] = (kind, out s, in s, centre)` for the cut into shot k; out = ease-in to the cut,
   in = ease-out after it, so the motion peaks exactly on the beat.
 * Fast fixes: `splice.py <src> <dst> 182-323 505-640` re-renders frame ranges into an existing render.
+* **Fourth feedback: the dark blurred band at the top (reference look, `BAND_Y`) looked like a fault** -> `shots5.BAND = False`.
+
+## The user's CapCut re-edit (the published version)
+The user re-edited our 1080p v5 in CapCut (exported 1080p 30 fps, same timing, same audio): intro colour filter (vivid
+deep blue), glass-shatter effect on the drop (4.33–5.05), teal light beams on the Turbo S (6.45–7.0), a white flash +
+echo/stretch on the Turbo S rear (7.05–7.3), an orange beam with heat-wave warp on the highway shot (7.45–7.9), a prism +
+echo on the GT3 reveal (8.4–9.0; it mirrors / duplicates the baked-in ID) and a darker ending with moving shade
+(10.2–12.6). No CapCut watermark or ending clip. They asked to remove the top band from *their* video:
+`capcut/fix_band.py cc.mp4 v5_1080p.mp4 n5_noaudio_v6.mp4 out.mp4` keeps their frames everywhere and only rebuilds the
+band rows (y < 405): intro -> 3D LUT of their filter (`capcut/lut3d.py`, fitted on rows below the band, pooled over the
+intro, `lut_intro.npy`) applied to (no-band - band); ending -> local gain field; effects / untouched -> plain delta.
+Phase check: their frame k == our 60 fps frame 2k. The ID line is re-stamped white in the dark ending.
 
 ## Clips ($WORK/clips) — user's uploads (6 Oct, Pinterest recordings, pin box (20,96,1060,1936))
 | name | content | used |

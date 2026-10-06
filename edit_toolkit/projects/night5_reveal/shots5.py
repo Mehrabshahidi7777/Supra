@@ -85,5 +85,6 @@ TRANS = {
 LOOP_OUT = 0.22                # end card zooms through at the very end -> clean cut to frame 0 (seamless loop)
 WM_CY = 1452                   # MEHRAB.7w7 line: ~3/4 height, above the YouTube / Instagram / Facebook overlays
 BAND_Y = 0.205                 # reference look: dark band over the top ~20 % of the frame
+BAND = False                   # user: the blurred dark band at the top looked like a fault -> off
 CARS = {'blue': 'Porsche 911 GT3 RS (992)', 'orange': 'McLaren P1', 'black': 'Porsche 911 Turbo S (992)',
         'silver': 'Porsche 911 GT3 (992)'}

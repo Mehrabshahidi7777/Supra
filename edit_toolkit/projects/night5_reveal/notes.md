@@ -9,6 +9,12 @@ chrome name at the end. So the mid-video slam (beats 8–12) is off: `shots5.MID
 flash). The logo engine stays for end cards (and `MID_LOGO = True` brings the reference's slam back if ever wanted).
 **Second feedback: the user didn't like the dotty particles** ("ستاره‌ها و برف دون‌دونه") — falling snow in the intro and
 the fire embers are OFF (`SNOW = False`, `EMBERS = False`); the cold snowy grade ("the filter") stays, they liked it.
+**Third feedback: no white blinking** ("صحنه سفید شده چشمک میزنه") — all white flashes are gone (intro flashes
+`FLASHES = []`, drop / chapter / beat-8 / sticker / end-card / loop flashes) and every scene change got a real
+transition instead (`shots5.TRANS`): zoom-through into the GT3 RS headlight -> headlight close-up, spin -> studio
+shot, zoom-through on the drop (stickers fly with it), spin into the Turbo S, zoom-through into the GT3, zoom into the
+end card, and the end card zooms through at the very end -> clean cut to frame 0 (loop). Same-car cuts keep the
+reference's blur-in whip; impact on cuts = punch + shake + a short colour fringe, never white.
 
 ## Reference
 * Upload: `Screen_Recording_20261006_214440_YouTube.mp4` (1080x2340, 14.96 s, YouTube Shorts "use this template" page).
@@ -54,7 +60,10 @@ the fire embers are OFF (`SNOW = False`, `EMBERS = False`); the cold snowy grade
 * Clean frames at extraction: `remove_red_sign` (STOP sign on S12 -> wall texture copied from above + pole inpaint,
   `CLEAN`), `blank_plate` (FIRST MOTORS dealer plates on S03/S04 and the P1 licence plate on S05 -> plate-shaped bright
   blob, its letters replaced by the plate's own shading from a normalised blur, `PLATES`).
-* Final = full render + re-rendered frames spliced in (`splice.py <src> <dst> 182-323 505-640`) after the fixes.
+* Transitions: `zoom_fx` (scale about a point + radial blur), `spin_fx` (rotation + spin blur, zoomed so no corners),
+  `apply_trans` reads `TRANS[k] = (kind, out s, in s, centre)` for the cut into shot k; out = ease-in to the cut,
+  in = ease-out after it, so the motion peaks exactly on the beat.
+* Fast fixes: `splice.py <src> <dst> 182-323 505-640` re-renders frame ranges into an existing render.
 
 ## Clips ($WORK/clips) — user's uploads (6 Oct, Pinterest recordings, pin box (20,96,1060,1936))
 | name | content | used |

@@ -138,6 +138,77 @@ def zoom_blur(img, amount, n=7, cx=None, cy=None):
     return cv2.resize(acc / n, (w, h), interpolation=cv2.INTER_LINEAR)
 
 
+def zoom_fx(f, s, cx=W / 2, cy=H / 2, zmax=0.60, blur=0.32):
+    """zoom-through: scale about (cx, cy) by 1 + zmax*s with a radial blur that grows with s (s = 0..1)"""
+    if s < 0.002:
+        return f
+    sc = 1 + zmax * s
+    M = np.float32([[sc, 0, cx * (1 - sc)], [0, sc, cy * (1 - sc)]])
+    g = cv2.warpAffine(f, M, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
+    return zoom_blur(g, blur * s ** 1.3, n=9, cx=cx, cy=cy)
+
+
+def spin_fx(f, s, sign=1.0, amax=34.0, zmax=0.40, n=9):
+    """spin: rotate by sign*amax*s about the centre (zoomed to hide the corners) with a spin blur that grows with s"""
+    if s < 0.002:
+        return f
+    ang = sign * amax * s
+    sc = 1 + zmax * s
+    spread = 18.0 * s
+    M = cv2.getRotationMatrix2D((W / 2, H / 2), ang, sc)
+    sharp = cv2.warpAffine(f, M, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
+    k = float(np.clip(spread / 5.0, 0, 1))
+    if k < 0.02:
+        return sharp
+    sm = cv2.resize(f, (W // 2, H // 2), interpolation=cv2.INTER_AREA)
+    acc = np.zeros_like(sm)
+    for j in range(n):
+        Mj = cv2.getRotationMatrix2D((W / 4, H / 4), ang - sign * spread * j / (n - 1), sc)
+        acc += cv2.warpAffine(sm, Mj, (W // 2, H // 2), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
+    bl = cv2.resize(acc / n, (W, H), interpolation=cv2.INTER_LINEAR)
+    return sharp * (1 - k) + bl * k
+
+
+def trans_fx(f, kind, s, centre, phase):
+    if kind == 'zoom':
+        cx, cy = centre if (centre is not None and phase == 'out') else (W / 2, H / 2)
+        return zoom_fx(f, s, cx, cy)
+    if kind == 'spin':
+        return spin_fx(f, s, sign=1.0 if phase == 'out' else -1.0)
+    return f
+
+
+def ease_in(q):
+    q = float(np.clip(q, 0, 1))
+    return q * q * q
+
+
+def ease_out_rev(q):
+    """1 at the cut, easing out to 0"""
+    q = float(np.clip(q, 0, 1))
+    return (1 - q) ** 3
+
+
+def apply_trans(f, T, i):
+    """scene transitions of shot i: 'out' toward the next cut, 'in' after its own cut (see shots5.TRANS)"""
+    nxt = S.TRANS.get(i + 1)
+    if nxt is not None:
+        kind, d_out, d_in, centre = nxt
+        t_cut = S.CUTS[i + 1]
+        if d_out > 0 and T >= t_cut - d_out:
+            f = trans_fx(f, kind, ease_in((T - (t_cut - d_out)) / d_out), centre, 'out')
+    cur = S.TRANS.get(i)
+    if cur is not None:
+        kind, d_out, d_in, centre = cur
+        if d_in > 0 and T < S.CUTS[i] + d_in:
+            f = trans_fx(f, kind, ease_out_rev((T - S.CUTS[i]) / d_in), centre, 'in')
+    return f
+
+
+def has_trans(i):
+    return i in S.TRANS
+
+
 def rgb_split(f, amt, vertical=False):
     if amt < 0.5:
         return f
@@ -338,7 +409,7 @@ def stickers(f, T, cold=False):
             e = ease_out_back(min(1.0, q / 0.13), 2.2)
             sc = 0.25 + 0.75 * e
             f = place(f, key, flip, x, y, wd * sc, rot=-8 * (1 - e), alpha=min(1.0, q / 0.03),
-                      flash=np.exp(-q / 0.07), shadow=0.6)
+                      flash=0.0, shadow=0.6)
     return f
 
 
@@ -349,7 +420,7 @@ LOGO_STROKE = cv2.GaussianBlur(cv2.dilate((LOGO.m > 0.3).astype(np.float32), np.
 KICKS = [S.beat(k) for k in range(0, 19)]
 
 
-def logo_layer(f, T, cy, t_in, dark=0.0, base_scale=0.93, env_k=0.12):
+def logo_layer(f, T, cy, t_in, dark=0.0, base_scale=0.93, env_k=0.12, glow_k=1.0):
     """composite the chrome logo centred at (540, cy); slam at t_in"""
     q = T - t_in
     slam = ease_out_cubic(min(1.0, q / 0.11))
@@ -385,7 +456,7 @@ def logo_layer(f, T, cy, t_in, dark=0.0, base_scale=0.93, env_k=0.12):
         rr = zoom_blur(rr, 0.20 * (1 - slam), cx=540, cy=cy)
         aa = zoom_blur(aa[..., None].repeat(3, 2), 0.20 * (1 - slam), cx=540, cy=cy)[..., 0]
     glow = cv2.GaussianBlur(cv2.resize(aa, (W4, H4), interpolation=cv2.INTER_AREA), (0, 0), 5)
-    f = f + up(glow)[..., None] * np.array([0.75, 0.82, 1.0], np.float32) * (0.25 + 0.6 * np.exp(-q / 0.12)) * (1 - 0.7 * dark)
+    f = f + up(glow)[..., None] * np.array([0.75, 0.82, 1.0], np.float32) * (0.25 + 0.6 * np.exp(-q / 0.12)) * (1 - 0.7 * dark) * glow_k
     return rr + f * (1 - aa[..., None])
 
 
@@ -444,21 +515,20 @@ def intro_frame(T, fi):
     rng = np.random.default_rng(300 + fi)
     i = max(j for j in range(INTRO_N) if S.CUTS[j] <= T + 1e-9)
     lt = T - S.CUTS[i]
-    fk = decay(T, FL, 0.06)
-    pre = smoothstep(S.T_DROP - 0.20, S.T_DROP, T)                 # suck-in before the drop
-    f = shot_frame(i, T, extra_zoom=1 + 0.06 * pre, push=0.06)
+    fk = decay(T, FL, 0.06)                                         # (FLASHES is empty: no white blinks)
+    f = shot_frame(i, T, push=0.06)
     f = grade_cold(f)
     f = stickers(f, T, cold=True)
     if S.SNOW:
         f = draw_snow(f, T, 1.0)
-    if pre > 0.01:
-        f = zoom_blur(f, 0.28 * pre ** 1.5)
-        f = f * (1 + 0.5 * pre ** 2)
+    f = apply_trans(f, T, i)                                        # zoom / spin into the next scene
     if fk > 0.01:
         f = f + min(fk, 1.4) * (f * 1.7 + 0.42)
         f = rgb_split(f, 14 * min(fk, 1.0))
-    shake = rng.normal(0, 1, 2) * (4 * min(fk, 1.0) + 10 * pre ** 2)
-    return f, shake, min(fk, 1.0) * 0.9
+    t_cut = S.CUTS[i + 1]
+    near = max(0.0, 1 - abs(T - t_cut) / 0.12) if i + 1 in S.TRANS else 0.0
+    shake = rng.normal(0, 1, 2) * (4 * min(fk, 1.0) + 6 * near)
+    return f, shake, 0.0
 
 
 WHIP = [0, 0, 0, 0, 200, 25, 160, 270, 340, 90, 200, 0, 160, 300, 20, 250, 110, 330, 190]
@@ -476,17 +546,18 @@ def montage_frame(T, fi):
     punch = 1 + 0.08 * np.exp(-lt / 0.07)
     if lt >= S.B / 2:
         punch *= 1 + 0.02 * np.exp(-(lt - S.B / 2) / 0.06)
-    # blur-in: the new shot slides in fast with a strong directional blur (reference), stronger on chapter starts
+    # same-car cuts: the new shot slides in fast with a strong directional blur (reference) and the old one whips out;
+    # new-car cuts (shots5.TRANS): zoom-through / spin transitions instead
+    special_in = has_trans(i)
+    special_out = has_trans(i + 1)
     ang = WHIP[i]
     d = np.array([np.cos(np.radians(ang)), np.sin(np.radians(ang))])
-    kin = max(0.0, 1 - lt / 0.20) ** 2
+    kin = 0.0 if special_in else max(0.0, 1 - lt / 0.20) ** 2
     off = 210 * kin
     f = shot_frame(i, T, extra_zoom=punch, shift=(sh[0] - off * d[0], sh[1] - off * d[1]), rot=rot)
-    if i == INTRO_N:                                               # the drop
-        f = zoom_blur(f, 0.42 * max(0.0, 1 - lt / 0.26) ** 1.6)
     if kin > 0.003:
         f = dir_blur(f, 190 * kin, ang)
-    if rem < 0.075 and i + 1 < NSHOT:                              # blur-out toward the next shot
+    if not special_out and rem < 0.075 and i + 1 < NSHOT:          # whip-out toward the next shot
         k = 1 - rem / 0.075
         d2 = np.array([np.cos(np.radians(WHIP[i + 1])), np.sin(np.radians(WHIP[i + 1]))])
         M = np.float32([[1, 0, 90 * k * d2[0]], [0, 1, 90 * k * d2[1]]])
@@ -494,6 +565,7 @@ def montage_frame(T, fi):
         f = dir_blur(f, 120 * k, WHIP[i + 1])
     f = grade_warm(f, 0.006 * np.exp(-lt / 0.07))
     f = stickers(f, T)
+    f = apply_trans(f, T, i)
     if S.MID_LOGO and S.LOGO_IN <= T < S.LOGO_OFF:
         dark = smoothstep(S.LOGO_DARK, S.LOGO_DARK + 0.05, T)
         f = logo_layer(f, T, S.LOGO_CY, S.LOGO_IN, dark=dark)
@@ -501,21 +573,12 @@ def montage_frame(T, fi):
             f = logo_glitch(f, rng)
     if S.EMBERS:
         f = draw_embers(f, T, smoothstep(S.T_DROP, S.T_DROP + 0.12, T))
-    flash = 0.0
-    if i == INTRO_N:
-        flash = 1.25 * np.exp(-lt / 0.07)
-        f = rgb_split(f, 26 * np.exp(-lt / 0.10))
-    elif abs(T - S.LOGO_IN) < 1e-9 or (S.LOGO_IN <= T < S.LOGO_IN + 0.3):
-        flash = 1.35 * np.exp(-(T - S.LOGO_IN) / 0.075)
-        f = rgb_split(f, 20 * np.exp(-(T - S.LOGO_IN) / 0.09))
-    elif ch_start:
-        flash = 0.75 * np.exp(-lt / 0.06)
-        f = rgb_split(f, 16 * np.exp(-lt / 0.08))
+    # no white flashes (user): impact = punch + shake + a short colour fringe
+    if ch_start:
+        f = rgb_split(f, 14 * np.exp(-lt / 0.09))
     else:
-        flash = 0.22 * np.exp(-lt / 0.05)
-        f = rgb_split(f, 9 * np.exp(-lt / 0.07), vertical=(i % 2 == 1))
-    f = f + flash * (0.55 + 0.6 * f)
-    return f, sh * 0.0, flash * 0.6
+        f = rgb_split(f, 8 * np.exp(-lt / 0.07), vertical=(i % 2 == 1))
+    return f, sh * 0.0, 0.0
 
 
 def outro_frame(T, fi):
@@ -529,12 +592,13 @@ def outro_frame(T, fi):
     f = up(bg4)
     yy = np.linspace(0, 1, H, dtype=np.float32)[:, None, None]
     f = f + EMBER[None, None] * 0.10 * smoothstep(0.55, 1.0, yy)
-    f = logo_layer(f, T, S.END_CY, S.T_OUT, dark=0.0, base_scale=0.95, env_k=0.0)
+    f = logo_layer(f, T, S.END_CY, S.T_OUT, dark=0.0, base_scale=0.95, env_k=0.0, glow_k=0.45)
     if S.EMBERS:
         f = draw_embers(f, T, 1.25)
-    f = f + 1.25 * np.exp(-lt / 0.07)                             # slam flash
-    endk = smoothstep(dur - 0.16, dur, lt)                         # flash builds -> matches the opening flash
-    f = f + endk ** 1.5 * (f * 1.7 + 0.6)
+    f = rgb_split(f, 12 * np.exp(-lt / 0.09))                      # slam: colour fringe + shake, no white flash
+    t0 = dur - S.LOOP_OUT                                          # loop: the end card zooms through, then a clean
+    if lt >= t0:                                                   # cut to frame 0 (on the song's loop point)
+        f = zoom_fx(f, ease_in((lt - t0) / S.LOOP_OUT), W / 2, S.END_CY)
     shake = rng.normal(0, 1, 2) * 16 * np.exp(-lt / 0.09)
     return f, shake
 

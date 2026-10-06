@@ -67,8 +67,22 @@ LOGO_IN, LOGO_DARK, LOGO_OFF = beat(8), 10.30, beat(12)
 LOGO_CY = 700                  # centre of the two-line logo (reference: upper middle, 20-48 % of the height)
 END_CY = 860
 # intro flashes (template times, measured on the reference recording): (time, strength)
-FLASHES = [(0.00, 0.35), (0.20, 0.75), (0.73, 0.5), (0.86, 0.6), (1.03, 0.35), (1.39, 0.8), (1.66, 0.4), (2.17, 0.6),
-           (2.42, 0.45), (2.70, 0.55), (3.04, 1.0), (3.38, 0.7), (3.86, 0.5), (4.03, 0.45), (4.18, 0.5)]
+REF_FLASHES = [(0.00, 0.35), (0.20, 0.75), (0.73, 0.5), (0.86, 0.6), (1.03, 0.35), (1.39, 0.8), (1.66, 0.4), (2.17, 0.6),
+               (2.42, 0.45), (2.70, 0.55), (3.04, 1.0), (3.38, 0.7), (3.86, 0.5), (4.03, 0.45), (4.18, 0.5)]
+# user feedback: no white blinking flashes at all -> FLASHES empty, every white flash replaced by real transitions
+FLASHES = []
+# scene transitions, keyed by the index of the incoming shot (cut time = CUTS[k]; k = 19 is the end card):
+#   (kind, out seconds before the cut, in seconds after it, zoom centre or None)
+#   zoom = zoom-through with radial blur, spin = rotation with spin blur, whip = slide with motion blur
+TRANS = {
+    1: ('zoom', 0.24, 0.32, (420, 1180)),   # GT3 RS rolling -> zoom into its headlight -> headlight close-up
+    2: ('spin', 0.22, 0.30, None),          # headlight -> studio rear 3/4
+    3: ('zoom', 0.24, 0.32, None),          # the drop: snowy GT3 RS + P1 stickers -> P1
+    7: ('spin', 0.18, 0.28, None),          # P1 -> black Turbo S (new car)
+    11: ('zoom', 0.20, 0.30, None),         # Turbo S -> silver GT3 (new car, beat 8)
+    19: ('zoom', 0.20, 0.0, None),          # last GT3 shot -> chrome MEHRAB.7w7 end card
+}
+LOOP_OUT = 0.22                # end card zooms through at the very end -> clean cut to frame 0 (seamless loop)
 WM_CY = 1452                   # MEHRAB.7w7 line: ~3/4 height, above the YouTube / Instagram / Facebook overlays
 BAND_Y = 0.205                 # reference look: dark band over the top ~20 % of the frame
 CARS = {'blue': 'Porsche 911 GT3 RS (992)', 'orange': 'McLaren P1', 'black': 'Porsche 911 Turbo S (992)',

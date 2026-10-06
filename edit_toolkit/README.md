@@ -22,6 +22,7 @@
 - اسم MEHRAB.7w7 با حروف کرومی تیغ‌دار (مثل لوگوی ZS3 رفرنس) که روی ضرب می‌کوبه تو کادر و مشکی‌کرومی هم می‌شه — فقط برای آخر ویدیو؛ آیدی بزرگ وسط ویدیو نیاد (شب ۵)
 - رنگ سرد زمستونی (فیلتر برفی) روی هر کلیپی و ماشین بعدی که مثل برچسب می‌پره تو کادر (شب ۵)
 - پاک کردن تابلو و نوشته‌ی پلاک‌ها از کلیپ‌ها (شب ۵)
+- ترنزیشن‌های نرم بین صحنه‌ها بدون فلش سفید: زوم به داخل (مثلاً زوم توی چراغ ماشین و رسیدن به نمای نزدیک چراغ) و چرخش با تاری (شب ۵)
 - پایان آهنگِ آروم و کلفت (مثل نوار کاست)
 - صدای ‎-14 LUFS
 
@@ -118,6 +119,7 @@ README section with raw/main direct links · update the night log in CHAT_START.
 | chrome logo slam over footage (dark stroke + shadow, scene reflection via normals, punch on kicks) — titles / end cards, not the ID mid-video | `night5 render5.py logo_layer` |
 | clean frames: inpaint a red street sign (wall texture copy) / blank dealer or licence plates (letters -> plate shading) | `night5 render5.py remove_red_sign / blank_plate` |
 | re-render frame ranges and splice them into a finished render (fast fixes) | `night5 splice.py` |
+| scene transitions without white flashes: zoom-through (radial blur, custom centre), spin (spin blur), timed to peak on the cut | `night5 render5.py zoom_fx / spin_fx / apply_trans` + `shots5.TRANS` |
 | snowy look on any clip (milky cold grade keeping the blue paint, frost edges; falling-snow particles exist but the user didn't like them) | `night5 render5.py grade_cold / draw_snow` |
 | fire ember streaks + bokeh embers (user didn't like dotty particles — ask first) | `night5 render5.py draw_embers` |
 | next-car sticker: slide in (motion blur) or pop with white rim flash, contact shadow; plate fill | `night5 render5.py stickers / place / clean_rect` |
@@ -133,8 +135,9 @@ README section with raw/main direct links · update the night log in CHAT_START.
 - Pure Engine Sound: spectrum bars + rev counter graphic synced to the engine audio.
 - MEHRAB.7w7 Reveal (done, Night 5): one cut per beat, next car pops in as a sticker, white flash on the last car,
   spiky chrome MEHRAB.7w7 as the end card. User feedback: **no big ID in the middle of the video** (only the bottom
-  line + the end, `shots5.MID_LOGO = False`) and **no dotty particles** (falling snow, embers, stars: `SNOW`/`EMBERS`
-  off) — the cold grade itself was liked. Reuse `logo5.py` for any chrome title (car names, "SMASH OR PASS", …).
+  line + the end, `shots5.MID_LOGO = False`), **no dotty particles** (falling snow, embers, stars: `SNOW`/`EMBERS`
+  off) and **no white blinking flashes** — use real transitions (zoom-through, spin, whip) between scenes instead.
+  The cold grade itself was liked. Reuse `logo5.py` for any chrome title (car names, "SMASH OR PASS", …).
 - Slide your finger (done, Night 4): reuse the engine with any path (zig-zag, circle) or for characters; the finger
   can also "bring" text, numbers or a Rate-This-Car score.
 - Always first understand the reference's mechanism (what the viewer does, what causes what) and keep it; make only the

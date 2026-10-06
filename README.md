@@ -23,6 +23,23 @@
 
 ---
 
+## Porsche GT3 RS & McLaren P1 — Snow to Fire ❄️🔥 — Night 5 (YouTube / Instagram / Facebook / WhatsApp)
+
+<img src="Night5_MEHRAB7w7_Reveal/Night5_MEHRAB7w7_Reveal_cover.jpg" width="320" alt="Porsche GT3 RS & McLaren P1 Snow to Fire cover">
+
+**شب ۵ برنامه‌ی ۳۰ شبه (۱۵ مهر ۱۴۰۵) — MEHRAB.7w7 Reveal**، به سبک الگوی یوتیوب @Zs3riyx با همون آهنگ (ELA PEIDA FUNK – Slowed). ۴ ثانیه‌ی اول آرومه: GT3 RS آبی با فیلتر سرد زمستونی و فلش‌های سفید روی صدای خواننده. درست قبل از دراپ دو تا P1 نارنجی مثل برچسب از راست می‌لغزن توی کادر. روی دراپ با تاری شدید و فلش می‌ره توی P1ها و از اونجا روی هر ضرب یه کات داریم که با تاری حرکتی میاد تو. هر ماشین ۴ ضرب روی صفحه‌ست و روی ضرب آخرش ماشین بعدی مثل برچسب می‌پره تو: P1 نارنجی، بعد 911 توربو S مشکی، بعد GT3 نقره‌ای که با فلش سفید رونمایی می‌شه. به خواست خودت اسم بزرگ وسط ویدیو نیومده و ذرات دون‌دونه (برف و جرقه) هم برداشته شده؛ آیدی فقط خط پایین کادره و آخر ویدیو، روی آخرین ضرب، MEHRAB.7w7 با حروف کرومی تیغ‌دار میاد. آهنگ مثل نوار کاست کلفت می‌شه و با فلش به اول لوپ می‌خوره. نوار تیره‌ی بالای کادر مثل خود رفرنسه. دو ویدیویی که لوگوی سازنده داشتن کلاً استفاده نشدن، تابلوی STOP پشت GT3 پاک شده و نوشته‌ی پلاک‌ها (FIRST MOTORS و پلاک P1) هم پاک شده.
+
+| فایل | توضیح |
+|---|---|
+| [`Night5_MEHRAB7w7_Reveal_4K_60fps.mp4`](Night5_MEHRAB7w7_Reveal/Night5_MEHRAB7w7_Reveal_4K_60fps.mp4) | **نسخه‌ی انتشار** برای یوتیوب، اینستاگرام، فیسبوک و استوری واتساپ — عمودی فورکی 2160×3840، ۶۰ فریم، ۱۳.۷ ثانیه، صدا ‎-14 LUFS |
+| [`Night5_MEHRAB7w7_Reveal_1080p_60fps.mp4`](Night5_MEHRAB7w7_Reveal/Night5_MEHRAB7w7_Reveal_1080p_60fps.mp4) | نسخه‌ی سبک 1080×1920، ۶۰ فریم (برای فرستادن توی چت) |
+| [`Night5_MEHRAB7w7_Reveal_cover.jpg`](Night5_MEHRAB7w7_Reveal/Night5_MEHRAB7w7_Reveal_cover.jpg) | کاور (عمودی 1080×1920) |
+| [`YouTube_title_description.txt`](Night5_MEHRAB7w7_Reveal/YouTube_title_description.txt) | عنوان و توضیحات انگلیسی برای هر پلتفرم، به‌اضافه‌ی کرِدیت آهنگ و کلیپ‌ها |
+
+**⬇️ دانلود مستقیم (یه کلیک):** [ویدیوی فورکی](https://github.com/Mehrabshahidi7777/Supra/raw/main/Night5_MEHRAB7w7_Reveal/Night5_MEHRAB7w7_Reveal_4K_60fps.mp4) · [ویدیوی 1080p](https://github.com/Mehrabshahidi7777/Supra/raw/main/Night5_MEHRAB7w7_Reveal/Night5_MEHRAB7w7_Reveal_1080p_60fps.mp4) · [کاور](https://github.com/Mehrabshahidi7777/Supra/raw/main/Night5_MEHRAB7w7_Reveal/Night5_MEHRAB7w7_Reveal_cover.jpg) · [متن عنوان و توضیحات](https://github.com/Mehrabshahidi7777/Supra/raw/main/Night5_MEHRAB7w7_Reveal/YouTube_title_description.txt)
+
+---
+
 ## Slide Your Finger Along the Rhythm 👆 BMW Edit — Night 4 (YouTube / Instagram / Facebook / WhatsApp)
 
 <img src="Night4_SlideYourFinger_BMW/Night4_SlideYourFinger_cover.jpg" width="320" alt="Slide your finger along the rhythm BMW edit cover">

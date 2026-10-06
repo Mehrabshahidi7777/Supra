@@ -19,6 +19,9 @@
 - ترند «انگشتت رو با ریتم بکش»: دایره‌ی نئونی که روی هر ضرب حرکت می‌کنه و هر حرکت انگشت ماشین بعدی رو از خود دایره میاره تو کادر (شب ۴)
 - خط‌های نئونی روی خطوط خود ماشین روی ضرب
 - اوترو MEHRAB.7w7 با عوض شدن فونت که لوپ می‌خوره
+- اسم MEHRAB.7w7 با حروف کرومی تیغ‌دار (مثل لوگوی ZS3 رفرنس) که روی ضرب می‌کوبه تو کادر و مشکی‌کرومی هم می‌شه — فقط برای آخر ویدیو؛ آیدی بزرگ وسط ویدیو نیاد (شب ۵)
+- رنگ سرد زمستونی (فیلتر برفی) روی هر کلیپی و ماشین بعدی که مثل برچسب می‌پره تو کادر (شب ۵)
+- پاک کردن تابلو و نوشته‌ی پلاک‌ها از کلیپ‌ها (شب ۵)
 - پایان آهنگِ آروم و کلفت (مثل نوار کاست)
 - صدای ‎-14 LUFS
 
@@ -36,6 +39,7 @@ edit_toolkit/
     strip.py                dense time strips of a clip range (pick exact in-points)
     framing.py              9:16 crop window with zoom/centre (keeps Pinterest back button out)
     cutout.py               GrabCut car cutouts for pop transitions
+    overlay_find.py         find logos / watermarks burned into a clip (skip or crop those clips)
     audio_finish.py         trim on beat, tape-stop ending, anti-click fades, -14 LUFS
     finish.sh               mux + x264 encode (< 30 MiB for chat delivery)
     finish4k.sh             master delivery: 4K 2160x3840 upscale + encode, plus the 1080p chat copy
@@ -43,7 +47,8 @@ edit_toolkit/
     night3_smash_or_pass/   footage montage engine (render3.py) + shots.py + notes.md  ← template for car montages
     red_title_scene/        pure-graphics title scene (render.py) + song analysis data + notes.md
     night4_finger_rhythm/   "slide your finger along the rhythm": beat-locked finger dot + brush reveal montage (render4.py)
-    night5_reveal/          "ELA PEIDA FUNK" chrome-logo reveal: reference analysis, beat grid, shot map (notes.md, ref_sheet.jpg) — build pending
+    night5_reveal/          "ELA PEIDA FUNK" edit: cold intro + flashes, sticker pops, blur-in cuts, spiky chrome MEHRAB.7w7
+                            end card, sign/plate cleaning (render5.py, logo5.py, shots5.py, cover5.py, splice.py, notes.md)
 ```
 Heavy data never goes in the repo: set `export WORK=/home/claude/work_edit` and keep `clips/`, `seg/`, `cut/`, `check/`,
 songs and renders there. Python deps are preinstalled (numpy, scipy, opencv, pillow, matplotlib) + ffmpeg.
@@ -109,6 +114,15 @@ README section with raw/main direct links · update the night log in CHAT_START.
 | neon edges of the footage on the beat (Sobel + bloom), light sweep | `night4 render4.py neon_edges / leak` |
 | seamless loop (outro rebuilds frame 0; smoke/dust on a loop clock) | `night4 render4.py outro_frame` |
 | loop-spliced song from a Shorts recording (find loop length + silent gap) | `night4 notes.md` |
+| spiky chrome lettering (blade strokes + thorn tips + barbs, chrome / black-chrome gradient maps, light sweep) | `night5 logo5.py` |
+| chrome logo slam over footage (dark stroke + shadow, scene reflection via normals, punch on kicks) — titles / end cards, not the ID mid-video | `night5 render5.py logo_layer` |
+| clean frames: inpaint a red street sign (wall texture copy) / blank dealer or licence plates (letters -> plate shading) | `night5 render5.py remove_red_sign / blank_plate` |
+| re-render frame ranges and splice them into a finished render (fast fixes) | `night5 splice.py` |
+| snowy look on any clip (milky cold grade keeping the blue paint, frost edges; falling-snow particles exist but the user didn't like them) | `night5 render5.py grade_cold / draw_snow` |
+| fire ember streaks + bokeh embers (user didn't like dotty particles — ask first) | `night5 render5.py draw_embers` |
+| next-car sticker: slide in (motion blur) or pop with white rim flash, contact shadow; plate fill | `night5 render5.py stickers / place / clean_rect` |
+| dark top band with a violet edge line on flashes (ELA PEIDA template look) | `night5 render5.py finish` |
+| logo / watermark detector for screen recordings (persistent edges across shots) | `kit/overlay_find.py` |
 
 ### Idea bank (mix with each new reference)
 - Smash or Pass with numbers (done, Night 3) → also works for characters or "which wheel / which colour".
@@ -117,8 +131,10 @@ README section with raw/main direct links · update the night log in CHAT_START.
 - Raw vs Edit: same clip, wipe line on the drop from flat raw to the full grade.
 - Night Drive: slow → fast speed ramp into the drop, neon light streaks, rain/fog grade, taillight glow.
 - Pure Engine Sound: spectrum bars + rev counter graphic synced to the engine audio.
-- MEHRAB.7w7 Reveal (Night 5, in progress): one cut per beat, next car pops in as a sticker, then a white flash and
-  MEHRAB.7w7 in spiky chrome slams over the silver car for 4 beats — see `projects/night5_reveal/notes.md`.
+- MEHRAB.7w7 Reveal (done, Night 5): one cut per beat, next car pops in as a sticker, white flash on the last car,
+  spiky chrome MEHRAB.7w7 as the end card. User feedback: **no big ID in the middle of the video** (only the bottom
+  line + the end, `shots5.MID_LOGO = False`) and **no dotty particles** (falling snow, embers, stars: `SNOW`/`EMBERS`
+  off) — the cold grade itself was liked. Reuse `logo5.py` for any chrome title (car names, "SMASH OR PASS", …).
 - Slide your finger (done, Night 4): reuse the engine with any path (zig-zag, circle) or for characters; the finger
   can also "bring" text, numbers or a Rate-This-Car score.
 - Always first understand the reference's mechanism (what the viewer does, what causes what) and keep it; make only the

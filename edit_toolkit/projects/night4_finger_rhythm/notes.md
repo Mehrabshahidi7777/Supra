@@ -1,7 +1,10 @@
 # Night 4 — Slide Your Finger Along the Rhythm 👆 BMW Edit (engine + shot list)
 
-Final: `Night4_SlideYourFinger_BMW/Night4_SlideYourFinger_BMW_1080p.mp4` (1080x1920, 30 fps, 17.67 s = 530 frames, -14 LUFS,
-tape-stop ending, seamless loop: last frame == first frame).
+Final (v3, new house rules): `Night4_SlideYourFinger_BMW/Night4_SlideYourFinger_BMW_4K_60fps.mp4` (2160x3840 upscale of the
+1080x1920 60 fps render, 17.67 s = 1060 frames, -14 LUFS, tape-stop ending, seamless loop: last frame == first frame)
++ `…_1080p_60fps.mp4` chat copy. v2 (first delivery) was 1080p 30 fps with the ID at the very bottom.
+v3 changes: 60 fps (`N4_FPS`, footage extracted to `$WORK/seg60`), MEHRAB.7w7 line centred at y 1452 (`WM_CY`, above
+the app overlays), finger path moved up 60 px, 'davidjames' dealer plate on S07 blanked (`CLEAN` → `clean_plate()`).
 
 ## Reference (understand the mechanism first!)
 YouTube Short (XTREME CARS, song chip "CLIMA LINDO (SLOWED) · GXM…", caption "SLIDE YOUR FINGER ALONG…").
@@ -50,8 +53,8 @@ loop seam stays on the beat).
 export WORK=/home/claude/work_edit            # clips/, seg/, check/, song4.wav
 python3 render4.py extract                    # per-shot frames incl. pre-roll (PRE / TRAVEL_MONT before each cut)
 python3 render4.py frames 0.08 7.7 8.3 17.74  # stills -> $WORK/check
-python3 render4.py video $WORK/n4_noaudio.mp4 # ~4.6 min with 2 workers
+python3 render4.py video $WORK/n4_60_noaudio.mp4   # 60 fps: ~9 min with 2 workers (N4_FPS=30 for quick tests)
 python3 ../../kit/audio_finish.py $WORK/song4.wav $WORK/n4_audio.wav --start 0.08 --end 17.7467 --tapestop 17.068
-bash ../../kit/finish.sh $WORK/n4_noaudio.mp4 $WORK/n4_audio.wav $WORK/out.mp4
+bash ../../kit/finish4k.sh $WORK/n4_60_noaudio.mp4 $WORK/n4_audio.wav $WORK/out_4k.mp4 $WORK/out_1080p.mp4
 python3 cover4.py $WORK/cover.jpg
 ```

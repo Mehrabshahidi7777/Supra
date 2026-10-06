@@ -38,6 +38,7 @@ edit_toolkit/
     cutout.py               GrabCut car cutouts for pop transitions
     audio_finish.py         trim on beat, tape-stop ending, anti-click fades, -14 LUFS
     finish.sh               mux + x264 encode (< 30 MiB for chat delivery)
+    finish4k.sh             master delivery: 4K 2160x3840 upscale + encode, plus the 1080p chat copy
   projects/
     night3_smash_or_pass/   footage montage engine (render3.py) + shots.py + notes.md  ← template for car montages
     red_title_scene/        pure-graphics title scene (render.py) + song analysis data + notes.md

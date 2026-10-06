@@ -18,7 +18,7 @@ T_END = S0 + 530 / 30          # 17.747 = beat 25 - 42 ms  (530 frames)
 
 # ---- the finger path = the reference's white dot: one slide per beat along the bottom and the right edge
 # dot starts top-right; move k (k >= 1) = MOVES[(k-1) % 4]; it lands exactly on beat k
-TR, BR, BL = (860, 560), (860, 1330), (180, 1330)
+TR, BR, BL = (860, 500), (860, 1270), (180, 1270)   # bottom row kept above the MEHRAB.7w7 line + app overlays
 MOVES = ['down', 'left', 'right', 'up']
 TRAVEL_INTRO = 0.50            # slide time before the drop (like the reference)
 TRAVEL_MONT = 0.32             # quicker swipes in the montage; each one paints the next car in
@@ -50,3 +50,7 @@ SPEED = {'S01': 0.62, 'S03': 0.95, 'S05': 0.82}
 CARS = {1: 'BMW M5 G90', 2: 'BMW M5', 3: 'BMW M5 F90', 4: 'BMW M3 Competition', 5: 'BMW X5',
         6: 'BMW M5 CS', 7: 'BMW M3 Touring', 8: 'BMW X4 M40i'}
 ACCENT = '#36e7ff'
+# clean frames (house rule): text on the footage to remove. S07: 'davidjames limited' dealer plate on the blue M3
+# -> per frame: dark plate found inside this search box (pin-box coords), its white letters inpainted
+CLEAN = {'S07': (330, 1250, 700, 1410)}
+WM_CY = 1452                   # centre of the MEHRAB.7w7 line: ~3/4 height, above YouTube/Instagram/Facebook overlays

@@ -29,7 +29,8 @@ from framing import crop_window
 import shots as S
 
 cv2.setNumThreads(1)
-W, H, FPS = 1080, 1920, 30
+W, H = 1080, 1920
+FPS = int(os.environ.get('N4_FPS', '60'))      # 60 fps master (house rule: smooth); 30 for quick tests
 W4, H4 = W // 4, H // 4
 NF = int(round((S.T_END - S.S0) * FPS))
 ACC = hexc(S.ACCENT)
@@ -184,7 +185,8 @@ for c in _tx:
     _d.text((_xx, 30), c, font=_f, fill=255); _xx += _f.getlength(c) + 3
 WM = np.asarray(_wm, np.float32) / 255
 WM_SH = cv2.GaussianBlur(WM, (0, 0), 4)
-WM_Y = 1688
+_wr = np.where(WM.max(1) > 0.5)[0]
+WM_Y = int(S.WM_CY - (_wr.min() + _wr.max()) / 2)   # line centred on S.WM_CY
 
 
 def put_mask(f, m, cy, colr, alpha=1.0, scale=1.0, shadow=None, sh_k=0.6, cx=470):
@@ -417,7 +419,7 @@ def intro_frame(T, fi, orb_out=None):
 
 
 # ================================================================== footage
-SEG = f'{WORK}/seg'
+SEG = f'{WORK}/seg' if FPS == 30 else f'{WORK}/seg{FPS}'
 
 
 def pre(i):
@@ -671,6 +673,38 @@ def render(fi):
     return finish(outro_frame(T, fi), fi)
 
 
+def clean_plate(path, search):
+    """remove the white letters of a dark (dealer) plate inside the search box: the plate's bright top edge gives
+    its position, every letter-sized bright blob inside it is inpainted (the plate stays, blank)"""
+    im = cv2.imread(path)
+    x0, y0, x1, y1 = search
+    reg = im[y0:y1, x0:x1]
+    g = cv2.cvtColor(reg, cv2.COLOR_BGR2GRAY)
+    n, lab, st, _ = cv2.connectedComponentsWithStats((g > 110).astype(np.uint8))
+    edges = [j for j in range(1, n) if st[j, 2] > 200 and st[j, 3] < 30]
+    if not edges:
+        return
+    e = max(edges, key=lambda j: st[j, 2])
+    px, py, pw = st[e, 0], st[e, 1], st[e, 2]
+    ph = int(pw / 4.3)
+    m = np.zeros(g.shape, np.uint8)
+    for j in range(1, n):
+        x, y, w, h, a = st[j]
+        if j != e and x >= px - 4 and x + w <= px + pw + 4 and y >= py + 6 and y + h <= py + ph + 8 and h < 45:
+            m[lab == j] = 255
+    m = cv2.dilate(m, np.ones((7, 7), np.uint8))
+    # fill the letters with the plate's own colour (median of the plate face), soft edges
+    ys, xs = slice(py + 6, py + ph + 4), slice(px + 4, px + pw - 4)
+    face = reg[ys, xs].reshape(-1, 3)[(m[ys, xs] == 0).reshape(-1)]
+    if len(face) < 50:
+        return
+    fill = np.median(face, 0).astype(np.float32)
+    a = cv2.GaussianBlur((m > 0).astype(np.float32), (0, 0), 1.5)[..., None]
+    noise = np.random.default_rng(3).normal(0, 2.0, reg.shape).astype(np.float32)
+    reg[:] = np.clip(reg.astype(np.float32) * (1 - a) + (fill + noise) * a, 0, 255).astype(np.uint8)
+    cv2.imwrite(path, im, [cv2.IMWRITE_JPEG_QUALITY, 96])
+
+
 def extract():
     for i, (nm, car, clip, src, z, cx, cy, box) in enumerate(S.SHOTS):
         dur = (pre(i) + S.CUTS[i + 1] - S.CUTS[i]) * S.SPEED.get(nm, 1.0)
@@ -680,7 +714,10 @@ def extract():
             os.remove(f'{d}/{fn}')
         x0, y0, x1, y1 = box
         subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', f'{src:.3f}', '-i', f'{WORK}/clips/{clip}.mp4', '-t', f'{dur + 0.15:.3f}',
-                        '-vf', f'crop={x1 - x0}:{y1 - y0}:{x0}:{y0},fps=30', '-q:v', '2', f'{d}/%04d.jpg'], check=True)
+                        '-vf', f'crop={x1 - x0}:{y1 - y0}:{x0}:{y0},fps={FPS}', '-q:v', '2', f'{d}/%04d.jpg'], check=True)
+        if nm in getattr(S, 'CLEAN', {}):
+            for fn in sorted(os.listdir(d)):
+                clean_plate(f'{d}/{fn}', S.CLEAN[nm])
         print(nm, clip, f'{src:.2f}-{src + dur:.2f}', len(os.listdir(d)), 'frames')
 
 

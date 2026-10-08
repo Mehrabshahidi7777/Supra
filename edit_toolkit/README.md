@@ -23,6 +23,7 @@
 - رنگ سرد زمستونی (فیلتر برفی) روی هر کلیپی و ماشین بعدی که مثل برچسب می‌پره تو کادر (شب ۵)
 - پاک کردن تابلو و نوشته‌ی پلاک‌ها از کلیپ‌ها (شب ۵)
 - ترنزیشن‌های نرم بین صحنه‌ها بدون فلش سفید: زوم به داخل (مثلاً زوم توی چراغ ماشین و رسیدن به نمای نزدیک چراغ) و چرخش با تاری (شب ۵)
+- ترند مولتی‌ورس اسپایدرمنی (شب ۶): گلیچ اسپایدرورسی، برچسب‌های نارنجی کمیکی «Earth-XX» و اسم ماشین، پورتال قرمز چرخان با ماشین‌های کوچیک، سوراخ کاغذپاره که به دنیای بعد باز می‌شه، دنیای سفید با خط‌دور قرمز، ترنزیشن قلم‌موی جوهری، دوربین مداربسته‌ی سیاه‌وسفید با ماشین شبح فیروزه‌ای، دنیای فیروزه‌ای کمیکی، اسم نورانی لرزون آخر و لوپی که از روشن‌ترین نقطه‌ها شروع می‌شه
 - پایان آهنگِ آروم و کلفت (مثل نوار کاست)
 - صدای ‎-14 LUFS
 
@@ -37,7 +38,8 @@ edit_toolkit/
     lib.py                  3D glossy text plates (text_mask, build_plate), compositing (over, place), easing, noise
     beats.py                music analysis: onset events, kicks, tempo, fitted beat grid (+ plot)
     clips.py                screen-recording tools: video box, timeline sheets, scene cuts, audio, per-shot extraction
-    strip.py                dense time strips of a clip range (pick exact in-points)
+    strip.py                dense time strips of a clip range (OpenCV seek: times drift on VFR recordings!)
+    strip_ff.py             the same strip decoded with ffmpeg = real timestamps -> pick in-points HERE
     framing.py              9:16 crop window with zoom/centre (keeps Pinterest back button out)
     cutout.py               GrabCut car cutouts for pop transitions
     overlay_find.py         find logos / watermarks burned into a clip (skip or crop those clips)
@@ -50,6 +52,9 @@ edit_toolkit/
     night4_finger_rhythm/   "slide your finger along the rhythm": beat-locked finger dot + brush reveal montage (render4.py)
     night5_reveal/          "ELA PEIDA FUNK" edit: cold intro + flashes, sticker pops, blur-in cuts, spiky chrome MEHRAB.7w7
                             end card, sign/plate cleaning (render5.py, logo5.py, shots5.py, cover5.py, splice.py, notes.md)
+    night6_multiverse/      Spider-Verse "BMW Multiverse": glitch, comic Earth tags, red vortex portal, torn-paper hole,
+                            white world + red outline, brush-ink wipe, CCTV + teal ghost, teal duotone world, glowing
+                            flicker name, brightest-first loop reveal (render6.py, shots6.py, make_cuts6.py, cover6.py)
 ```
 Heavy data never goes in the repo: set `export WORK=/home/claude/work_edit` and keep `clips/`, `seg/`, `cut/`, `check/`,
 songs and renders there. Python deps are preinstalled (numpy, scipy, opencv, pillow, matplotlib) + ffmpeg.
@@ -126,6 +131,21 @@ README section with raw/main direct links · update the night log in CHAT_START.
 | next-car sticker: slide in (motion blur) or pop with white rim flash, contact shadow; plate fill | `night5 render5.py stickers / place / clean_rect` |
 | dark top band with a violet edge line on flashes (ELA PEIDA template look) | `night5 render5.py finish` |
 | logo / watermark detector for screen recordings (persistent edges across shots) | `kit/overlay_find.py` |
+| Spider-Verse glitch: misaligned bands, red/cyan channel split, blocky pixel chunks (cuts + onset bursts) | `night6 render6.py glitch` |
+| orange comic caption boxes ("Earth-" red + number blue, car name, "???...", "BMW Multiverse?"), pop-in | `night6 render6.py _tag / tag_anim` |
+| red vortex portal (log-spiral streaks from periodic FFT noise, rings, core glow — no particles) | `night6 render6.py vortex` |
+| car sprite with coloured outline glow + rim (portal Earths), dark car lift | `night6 render6.py sprite / place_car` |
+| torn-paper hole opening onto the next shot (jagged contour, paper rim, shadow) | `night6 render6.py hole_masks / hole_frame` |
+| high-key white world, blue paint kept, red outline from the colour mask + comic ink edges | `night6 render6.py grade_white` |
+| brush-ink wipe: curved tapered strokes, bristles, dry-brush gaps, pulled out from the tails | `night6 render6.py ink_mask` |
+| CCTV look (B&W, noise, rolling bar, scanlines, barrel lens) + REC / CAM / timestamp / corners overlay | `night6 render6.py grade_cctv / cctv_overlay` |
+| hologram ghost car (teal recolour, flicker, glitch slices) | `night6 render6.py ghost` |
+| teal comic duotone + bloom + cyan edges + light halftone (shadows only) | `night6 render6.py grade_teal` |
+| big glowing text flash on the beat (white, dark rim, teal glow) | `night6 render6.py flash_layer` |
+| glowing flickering name outro (per-letter switch-on + flicker dips, halftone, bloom) | `night6 render6.py outro_frame` |
+| loop seam: frame 0 appears from black brightest-first (lights first) | `night6 render6.py reveal_frame` |
+| licence plate on a NIGHT shot (dim plate next to red taillights): low-saturation blob, merged pieces | `night6 render6.py blank_plate` |
+| ID line readable on white backgrounds (adaptive shadow + dark rim) | `night6 render6.py finish` |
 
 ### Idea bank (mix with each new reference)
 - Smash or Pass with numbers (done, Night 3) → also works for characters or "which wheel / which colour".
@@ -143,6 +163,10 @@ README section with raw/main direct links · update the night log in CHAT_START.
   The cold grade itself was liked. Reuse `logo5.py` for any chrome title (car names, "SMASH OR PASS", …).
 - Slide your finger (done, Night 4): reuse the engine with any path (zig-zag, circle) or for characters; the finger
   can also "bring" text, numbers or a Rate-This-Car score.
+- BMW Multiverse (done, Night 6): Spider-Verse jumps between "Earths", one BMW variant per Earth (colour per Earth),
+  car tags so viewers learn the models; works for any brand or for characters ("Spider-Man variants"), and the
+  Earth tags make an easy comment hook ("Which Earth would you live in?").
+- Screen recordings are VFR: pick in-points with `kit/strip_ff.py`, never with OpenCV seek times (Night 6 lesson).
 - Always first understand the reference's mechanism (what the viewer does, what causes what) and keep it; make only the
   effects heavier (user feedback on Night 4).
 - Always: strongest shot + hook text in frame 0, colour story between subjects, 1 s looping outro, tape-stop ending.

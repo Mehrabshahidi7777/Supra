@@ -23,6 +23,23 @@
 
 ---
 
+## BMW Multiverse 🕷️🌀 Spider-Verse Car Edit — Night 6 (YouTube / Instagram / Facebook / WhatsApp)
+
+<img src="Night6_BMW_Multiverse/Night6_BMW_Multiverse_cover.jpg" width="320" alt="BMW Multiverse cover">
+
+**شب ۶ برنامه‌ی ۳۰ شبه (۱۶ مهر ۱۴۰۵) — BMW Multiverse**، به سبک الگوی اسپایدرورسی یوتیوب @miot7 با آهنگِ خود الگو. چون صحنه‌ی اسپایدرمن روی BMW پیدا نشد، دنیای خونه یه M4 مشکی توی برفِ شبه با چراغ‌های قرمز: گلیچ اسپایدرورسی و برچسب‌های «???...» و «BMW Multiverse?»، بعد زوم توی چراغ و پورتال قرمز با چهار زمین (E30 قرمز، E36 بنفش، M2 آبی، M4 مشکی)، سوراخ کاغذپاره‌ی Earth-???، دنیای سفید Earth-67 با M4 آبی و خط‌دور قرمز، ترنزیشن قلم‌موی جوهری، دوربین مداربسته‌ی سیاه‌وسفید با ماشین شبحِ فیروزه‌ای، دنیای فیروزه‌ای Earth-928 با M3 G80 و فلش M3 / G80، و آخر MEHRAB.7w7 نورانیِ لرزون؛ ویدیو از چراغ‌های قرمز دوباره شروع می‌شه و لوپ بی‌درزه. بدون فلش سفید، ذرات دون‌دونه و نوار بالا؛ پلاک‌ها پاک شدن و ویدیوهای لوگودار استفاده نشدن.
+
+| فایل | توضیح |
+|---|---|
+| [`Night6_BMW_Multiverse_4K_60fps.mp4`](Night6_BMW_Multiverse/Night6_BMW_Multiverse_4K_60fps.mp4) | **نسخه‌ی انتشار** برای یوتیوب، اینستاگرام، فیسبوک و استوری واتساپ — عمودی فورکی 2160×3840، ۶۰ فریم، ۱۴.۲ ثانیه، صدا ‎-14 LUFS |
+| [`Night6_BMW_Multiverse_1080p_60fps.mp4`](Night6_BMW_Multiverse/Night6_BMW_Multiverse_1080p_60fps.mp4) | همون، سبک 1080×1920 (برای فرستادن توی چت) |
+| [`Night6_BMW_Multiverse_cover.jpg`](Night6_BMW_Multiverse/Night6_BMW_Multiverse_cover.jpg) | کاور (عمودی 1080×1920) |
+| [`YouTube_title_description.txt`](Night6_BMW_Multiverse/YouTube_title_description.txt) | عنوان و توضیحات انگلیسی برای هر پلتفرم، متن وضعیت واتساپ و کرِدیت |
+
+**⬇️ دانلود مستقیم (یه کلیک):** [نسخه‌ی انتشار فورکی](https://github.com/Mehrabshahidi7777/Supra/raw/main/Night6_BMW_Multiverse/Night6_BMW_Multiverse_4K_60fps.mp4) · [نسخه‌ی 1080p](https://github.com/Mehrabshahidi7777/Supra/raw/main/Night6_BMW_Multiverse/Night6_BMW_Multiverse_1080p_60fps.mp4) · [کاور](https://github.com/Mehrabshahidi7777/Supra/raw/main/Night6_BMW_Multiverse/Night6_BMW_Multiverse_cover.jpg) · [متن عنوان و توضیحات](https://github.com/Mehrabshahidi7777/Supra/raw/main/Night6_BMW_Multiverse/YouTube_title_description.txt)
+
+---
+
 ## Porsche GT3 RS & McLaren P1 — Glass Shatter 💥🔥 — Night 5 (YouTube / Instagram / Facebook / WhatsApp)
 
 <img src="Night5_MEHRAB7w7_Reveal/Night5_MEHRAB7w7_Reveal_cover.jpg" width="320" alt="Porsche GT3 RS & McLaren P1 Glass Shatter cover">

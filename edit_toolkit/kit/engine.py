@@ -30,6 +30,8 @@ RECIPE (python dict; times in seconds; paths relative to $WORK, 'repo:<path>' = 
   cover     {'t': 0.4, 'texts': [...]}   frame used for the cover + optional cover-only texts
 
 SHOT keys:
+  draw      fn(ctx) -> uint8 frame: a drawn / graphics shot instead of a source (ctx: q, u, ls, dur, t, fi, beat)
+  box       (x0, y0, x1, y1) video area inside a screen recording;  rot 'ccw' | 'cw' for sideways pins
   src       video or image;  at = in-point (s);  beats = length in beats (0.5 ok)  or  dur = seconds
   zoom 1.0 (= largest 9:16 crop), cx / cy 0..1 (crop centre in the source), flip False
   push      extra zoom over the shot (0.06 = slow push in; negative = pull out); focus (fx, fy) 0..1
@@ -139,9 +141,16 @@ class Source:
         self.tmap = tmap                      # local u (s) -> source time (s)
         sw, sh, fps, dur = probe(self.path)
         self.still = fps == 0
-        x, y, cw, ch = crop_box(sw, sh, spec.get('zoom', 1.0), spec.get('cx', 0.5), spec.get('cy', 0.5))
+        bx0, by0, bx1, by1 = spec.get('box', (0, 0, sw, sh))      # video area inside a screen recording
+        bw, bh = (bx1 - bx0) // 2 * 2, (by1 - by0) // 2 * 2
+        rot = spec.get('rot')                                       # 'ccw' / 'cw': sideways pins
+        rw, rh = (bh, bw) if rot else (bw, bh)
+        x, y, cw, ch = crop_box(rw, rh, spec.get('zoom', 1.0), spec.get('cx', 0.5), spec.get('cy', 0.5))
         if self.still:
-            im = cv2.cvtColor(cv2.imread(self.path), cv2.COLOR_BGR2RGB)[y:y + ch, x:x + cw]
+            im = cv2.cvtColor(cv2.imread(self.path), cv2.COLOR_BGR2RGB)[by0:by0 + bh, bx0:bx0 + bw]
+            if rot:
+                im = np.ascontiguousarray(np.rot90(im, 1 if rot == 'ccw' else -1))
+            im = im[y:y + ch, x:x + cw]
             im = cv2.resize(im, (W, H), interpolation=cv2.INTER_AREA if cw > W else cv2.INTER_LANCZOS4)
             if spec.get('flip'):
                 im = im[:, ::-1].copy()
@@ -153,7 +162,10 @@ class Source:
         lo, hi = max(0.0, lo - 1.0 / fps), min(dur, hi + 2.0 / fps) if dur else hi + 2.0 / fps
         need = max(hi - lo, 1.0 / fps)
         self.fps = fps if need * fps <= self.MAX_FRAMES else self.MAX_FRAMES / need
-        vf = f'crop={cw}:{ch}:{x}:{y},scale={W}:{H}:flags=lanczos'
+        vf = f'crop={bw}:{bh}:{bx0}:{by0},' if 'box' in spec else ''
+        if rot:
+            vf += 'transpose=2,' if rot == 'ccw' else 'transpose=1,'
+        vf += f'crop={cw}:{ch}:{x}:{y},scale={W}:{H}:flags=lanczos'
         if spec.get('flip'):
             vf += ',hflip'
         if self.fps < fps - 0.01:
@@ -495,7 +507,8 @@ class Edit:
         q = (t - sg['s']) / max(sg['e'] - sg['s'], 1e-6)
         beats = [self.bt(j) for j in range(int(self.bi(t)) - 1, int(self.bi(t)) + 2)]
         last = max([b for b in beats if b <= t + 1e-6] or [0.0])
-        return dict(q=float(np.clip(q, 0, 1)), u=t - sg['a'], t=t, fi=fi, k=k, seg=sg,
+        return dict(q=float(np.clip(q, 0, 1)), u=t - sg['a'], t=t, fi=fi, k=k, seg=sg, beat=self.bi(t),
+                    ls=t - sg['s'], dur=sg['e'] - sg['s'],
                     env=float(np.exp(-(t - last) / 0.09)), rng=np.random.default_rng(1000 + fi),
                     hist=self.hist.get(k, []))
 
@@ -503,9 +516,11 @@ class Edit:
         sg = self.segs[k]
         if sg['kind'] == 'outro':
             return self.outro_frame(t, fi)
-        src = self.source(k)
         c = self.ctx(k, t, fi)
-        img = src.frame(c['u'])
+        if 'draw' in sg['spec']:
+            img = sg['spec']['draw'](c)
+        else:
+            img = self.source(k).frame(c['u'])
         if sg['spec'].get('pre'):
             img = apply_fx(img, sg['spec']['pre'], c)
         push = sg['spec'].get('push', 0.0)
@@ -623,12 +638,14 @@ class Edit:
             nb = self.bi(sg['e']) - self.bi(sg['s'])
             if sg['kind'] == 'outro':
                 src = f"END CARD '{s.get('text', 'MEHRAB.7w7')}'"
+            elif 'draw' in s:
+                src = f"DRAW {getattr(s['draw'], '__name__', 'fn')}"
             else:
                 src = f"{os.path.basename(s['src'])} @{s.get('at', 0):.2f}"
             tin = self.segs[k - 1]['tout'] if k else '-'
             print(f"{k:2d} {sg['s']:6.2f} {sg['e']:6.2f}  {nb:5.2f}  {src:20.20s} {str(tin):>13s} -> "
                   f"{str(sg['tout']):13s} {s.get('fx', '')}")
-            if sg['kind'] == 'shot':
+            if sg['kind'] == 'shot' and 'draw' not in s:
                 w, h, fps, dur = probe(path_of(s['src']))
                 span = sg['b'] - sg['a']
                 tm = make_tmap(s, span, (sg['din'], (sg['s'] - sg['a'], sg['e'] - sg['a'])))

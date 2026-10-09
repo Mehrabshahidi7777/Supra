@@ -89,6 +89,7 @@ edit_toolkit/
     engine.py               RECIPE-DRIVEN EDIT ENGINE (start here for a new reference): recipe.py = song window +
                             beat grid + shot list + transition / effect numbers + texts + end card + loop ->
                             plan | stills | sheet | cover | render (2 workers, 4K60 master + 1080p copy, -14 LUFS)
+    splice.py               re-render frame ranges of an engine edit into the finished render + re-finish (fast fixes)
     gltrans.py              41 scene transitions ported 1:1 from gl-transitions (MIT; page_curl BSD-3 HP),
                             GLSL -> numpy/cv2.remap: transition(name, a, b, p, ease=None); NUMBERS = number -> name for
                             all 59 pack items; CLI: list | demo A tA B tB name out.mp4 | sheet
@@ -98,6 +99,11 @@ edit_toolkit/
                             cross_hatch, emboss, twist, lens_blur, ink, edge_work
   projects/
     engine_demo/            6 s self-test recipe of the engine on repo footage (every engine path once)
+    night7_math/            FIRST ENGINE EDIT — "Math ahh edit" (@miot7): recipe.py (timeline in the docstring),
+                            scenes.py (glowing title, neon logo outlines in seamless fog, 4-row logo equation = BMW with
+                            dive into the roundel, 3D "BMW M3 Power Evolution" chart with a red glowing frame, car
+                            sprite tumbling in 3D, B&W->colour pop, red ghost), assets.py (logo alphas from the user's
+                            screenshots incl. chrome logos on white, GrabCut car cutouts, E36 plate inpaint)
     vfx_showcase/           numbered reels of the whole pack: showcase.py (#1-24), showcase2.py (#25-59)
                             -> VFX_Pack_Showcase/ in the repo root. Both render in parallel parts (2 workers, resumable).
                             The user picks effects BY THESE NUMBERS (tables at the top of this README, gltrans.NUMBERS).
@@ -267,3 +273,7 @@ lens_blur 620. Memory: the box OOM-kills at ~5.5 GB — keep at most ~2 shots of
 - Always first understand the reference's mechanism (what the viewer does, what causes what) and keep it; make only the
   effects heavier (user feedback on Night 4).
 - Always: strongest shot + hook text in frame 0, colour story between subjects, 1 s looping outro, tape-stop ending.
+- Math ahh edit (done, Night 7): any brand / model family works — the equation's answer is the hero brand, the
+  chart shows real numbers (power, 0-100, top speed) per generation; comment hook "which one is the king?".
+- Pinterest recordings: the back button sits at the top-left of the video box (y < ~150 of the box) — keep each
+  shot's crop top below it (zoom / cy), check frame 0 and the cover (Night 7 lesson).

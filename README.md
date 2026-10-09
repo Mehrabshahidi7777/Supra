@@ -25,6 +25,23 @@
 
 ---
 
+## BMW M3 Math 🧮🔥 Old School Car Edit — Night 7 (YouTube / Instagram / Facebook / WhatsApp)
+
+<img src="Night7_OldSchool_M3_Math/Night7_OldSchool_M3_Math_cover.jpg" width="320" alt="BMW M3 Math cover">
+
+**شب ۷ برنامه‌ی ۳۰ شبه (۱۷ مهر ۱۴۰۵) — تست Old School BMW**، به سبک الگوی «Math ahh edit» یوتیوب @miot7 با آهنگِ خود الگو؛ اولین ادیتی که با موتور ادیت جدید ساخته شد. اول عنوان نورانی OLD SCHOOL / M3 MATH روی M3 E46 مشکی با چراغ‌های فرشته‌ای، بعد لوگوی مرسدس و جگوار به‌شکل خط نئونی توی مه تیره، روی دراپ یه معادله‌ی ریاضی با لوگوها: √(مرسدس × آئودی) + مک‌لارن / (تسلا − لکسوس) × جگوار = BMW، زوم توی لوگوی BMW و نمودار سه‌بعدی «BMW M3 Power Evolution» که لوگوی BMW خطش رو می‌کشه و E30 (۱۹۵ اسب)، E36 (۲۸۶) و E46 (۳۴۳) روش ظاهر می‌شن؛ بعد E36 سفید توی فضا پشتک می‌زنه و آخر ولاسیتی با حس فیلم قدیمی: E30 قرمز که از سیاه‌وسفید رنگی می‌شه، چراغ‌های E30 آبی، دریفت E46 توی دود با سایه‌ی قرمز، رینگ و چراغ‌های E46 M3، و MEHRAB.7w7 نورانی که لوپ می‌خوره به اول. بدون فلش سفید و ستاره‌های دون‌دونه؛ پلاک E36 پاک شد و دکمه‌ی پینترست توی کادر نیست.
+
+| فایل | توضیح |
+|---|---|
+| [`Night7_OldSchool_M3_Math_4K_60fps.mp4`](Night7_OldSchool_M3_Math/Night7_OldSchool_M3_Math_4K_60fps.mp4) | **نسخه‌ی انتشار** برای یوتیوب، اینستاگرام، فیسبوک و استوری واتساپ — عمودی فورکی 2160×3840، ۶۰ فریم، ۱۳.۷ ثانیه، صدا ‎-14 LUFS |
+| [`Night7_OldSchool_M3_Math_1080p_60fps.mp4`](Night7_OldSchool_M3_Math/Night7_OldSchool_M3_Math_1080p_60fps.mp4) | همون، سبک 1080×1920 (برای فرستادن توی چت) |
+| [`Night7_OldSchool_M3_Math_cover.jpg`](Night7_OldSchool_M3_Math/Night7_OldSchool_M3_Math_cover.jpg) | کاور (عمودی 1080×1920) |
+| [`YouTube_title_description.txt`](Night7_OldSchool_M3_Math/YouTube_title_description.txt) | عنوان و توضیحات انگلیسی برای هر پلتفرم، متن وضعیت واتساپ و کرِدیت |
+
+**⬇️ دانلود مستقیم (یه کلیک):** [نسخه‌ی انتشار فورکی](https://github.com/Mehrabshahidi7777/Supra/raw/main/Night7_OldSchool_M3_Math/Night7_OldSchool_M3_Math_4K_60fps.mp4) · [نسخه‌ی 1080p](https://github.com/Mehrabshahidi7777/Supra/raw/main/Night7_OldSchool_M3_Math/Night7_OldSchool_M3_Math_1080p_60fps.mp4) · [کاور](https://github.com/Mehrabshahidi7777/Supra/raw/main/Night7_OldSchool_M3_Math/Night7_OldSchool_M3_Math_cover.jpg) · [متن عنوان و توضیحات](https://github.com/Mehrabshahidi7777/Supra/raw/main/Night7_OldSchool_M3_Math/YouTube_title_description.txt)
+
+---
+
 ## BMW Multiverse 🕷️🌀 Spider-Verse Car Edit — Night 6 (YouTube / Instagram / Facebook / WhatsApp)
 
 <img src="Night6_BMW_Multiverse/Night6_BMW_Multiverse_cover.jpg" width="320" alt="BMW Multiverse cover">

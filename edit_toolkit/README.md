@@ -27,6 +27,23 @@
 - پایان آهنگِ آروم و کلفت (مثل نوار کاست)
 - صدای ‎-14 LUFS
 
+**🎞️ پک ترنزیشن و افکت شماره‌دار** (از یه پروژه‌ی متن‌باز گیت‌هاب، بدون فلش سفید و ذرات دون‌دونه) — ویدیوی نمونه با همین شماره‌ها توی پوشه‌ی `VFX_Pack_Showcase` ریپوئه. توی چت فقط بگو مثلاً «ترنزیشن ۳ و ۹ و افکت ۲۰»:
+
+| شماره | ترنزیشن | شماره | ترنزیشن / افکت |
+|---|---|---|---|
+| ۱ | مکعب سه‌بعدی | ۱۳ | برگشتن کاشی‌ها مثل کارت |
+| ۲ | پیچ‌وتاب از چپ به راست | ۱۴ | لنز چشم حشره با رنگ‌های جدا |
+| ۳ | باز شدن در و اومدن صحنه‌ی بعد | ۱۵ | هل دادن کارت به بالا |
+| ۴ | گرداب | ۱۶ | کرکره |
+| ۵ | جابه‌جایی کارت‌ها | ۱۷ | کالیدوسکوپ |
+| ۶ | پیچ‌وتاب مورب | ۱۸ | تغییر سرعت: آهسته بعد تند |
+| ۷ | چرخش و زوم با تاری حرکت | ۱۹ | اسلوموشن نرم |
+| ۸ | موج آب | ۲۰ | دوربین سه‌بعدی |
+| ۹ | ورق خوردن کتاب | ۲۱ | لرزش روی ضرب |
+| ۱۰ | ذوب شدن رنگ‌ها | ۲۲ | ضربه‌ی لنز |
+| ۱۱ | چرخیدن از گوشه با تاری | ۲۳ | رد نور چراغ‌ها |
+| ۱۲ | فشرده شدن به یه خط | ۲۴ | نور رنگی گرم یا سرد |
+
 ---
 
 ## For the assistant (technical guide)
@@ -46,7 +63,13 @@ edit_toolkit/
     audio_finish.py         trim on beat, tape-stop ending, anti-click fades, -14 LUFS
     finish.sh               mux + x264 encode (< 30 MiB for chat delivery)
     finish4k.sh             master delivery: 4K 2160x3840 upscale + encode, plus the 1080p chat copy
+    gltrans.py              17 scene transitions ported 1:1 from gl-transitions (MIT, GLSL -> numpy/cv2.remap):
+                            transition(name, a, b, p, ease=None); CLI: list | demo A tA B tB name out.mp4 | sheet
+    vfx.py                  Clip (any time incl. between frames via DIS optical flow = smooth slow-mo), ramp_times /
+                            ramp_frames (speed ramps + shutter motion blur), tilt3d, shake, lens_warp, echo, light_leak
   projects/
+    vfx_showcase/           numbered reel of the whole pack (showcase.py) -> VFX_Pack_Showcase/ in the repo root.
+                            The user picks effects BY THESE NUMBERS (table at the top of this README).
     night3_smash_or_pass/   footage montage engine (render3.py) + shots.py + notes.md  ← template for car montages
     red_title_scene/        pure-graphics title scene (render.py) + song analysis data + notes.md
     night4_finger_rhythm/   "slide your finger along the rhythm": beat-locked finger dot + brush reveal montage (render4.py)
@@ -146,6 +169,20 @@ README section with raw/main direct links · update the night log in CHAT_START.
 | loop seam: frame 0 appears from black brightest-first (lights first) | `night6 render6.py reveal_frame` |
 | licence plate on a NIGHT shot (dim plate next to red taillights): low-saturation blob, merged pieces | `night6 render6.py blank_plate` |
 | ID line readable on white backgrounds (adaptive shadow + dark rim) | `night6 render6.py finish` |
+| **VFX pack #1–17** transitions: cube, crosswarp, doorway, swirl, swap, directional_warp, revolve, ripple, book_flip, morph, tangent_blur, squeeze, grid_flip, flyeye, push_scaled, window_slice, kaleidoscope (numbers = showcase order) | `kit/gltrans.py` (`showcase.ORDER` maps number -> name) |
+| 3D-stage transitions (cube / doorway / swap) on a dark blurred stage instead of black: `bg='blur'` | `kit/gltrans.py` |
+| **#18** speed ramp: slow parts optical-flow interpolated, fast parts shutter-blurred; keys = (out time, speed) | `kit/vfx.py ramp_frames` |
+| **#19** smooth slow motion from any clip (DIS flow, ~170 ms/frame at 1080p) | `kit/vfx.py Clip.at` |
+| **#20** 3D camera swing of a flat shot, auto-zoom so no border shows | `kit/vfx.py tilt3d` |
+| **#21** smooth impact shake with motion blur along the move (drive `strength` with a beat envelope) | `kit/vfx.py shake` |
+| **#22** lens punch (barrel bulge / pinch) | `kit/vfx.py lens_warp` |
+| **#23** light trails (lighten echo of the last ~10 frames; 'mean' = ghost car) | `kit/vfx.py echo` |
+| **#24** soft colour leak, warm / teal / red, capped so it never goes white | `kit/vfx.py light_leak` |
+
+Speed at 1080x1920 on this 2-core box (ms per frame): window_slice 45, ripple 60, crosswarp 100, squeeze 110,
+swirl 110, morph 120, push_scaled 140, flyeye 140, book_flip 170, doorway / grid_flip / directional_warp ~200,
+swap 220, cube 270, revolve 590 (9 blur taps), kaleidoscope 650, tangent_blur 1100 (12 taps). A 0.6 s transition at
+60 fps = 36 frames, so even the heaviest is well under a minute.
 
 ### Idea bank (mix with each new reference)
 - Smash or Pass with numbers (done, Night 3) → also works for characters or "which wheel / which colour".

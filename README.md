@@ -4,6 +4,8 @@
 
 **🧰 جعبه‌ابزار ادیت:** [`edit_toolkit`](edit_toolkit/README.md) — همه‌ی اسکریپت‌ها، افکت‌ها، روش کار و ایده‌ها یه‌جا، برای ساختن ادیت‌های بعدی توی هر چت جدید.
 
+**🎞️ پک ترنزیشن و افکت:** [ویدیوی نمونه](VFX_Pack_Showcase/VFX_Pack_Showcase_1080p_60fps.mp4) · [دانلود مستقیم](https://github.com/Mehrabshahidi7777/Supra/raw/main/VFX_Pack_Showcase/VFX_Pack_Showcase_1080p_60fps.mp4) — ۱۷ ترنزیشن و ۷ افکت شماره‌دار روی صحنه‌های ادیت‌های خودم. برای ادیت بعدی فقط بگو کدوم شماره‌ها (جدولش توی [جعبه‌ابزار](edit_toolkit/README.md)).
+
 ## 🖤 لوگوی MEHRAB.7w7 (صورتک 7w7)
 
 <img src="MEHRAB7w7_Logo/MEHRAB7w7_logo_circle.png" width="200" alt="MEHRAB.7w7 logo">

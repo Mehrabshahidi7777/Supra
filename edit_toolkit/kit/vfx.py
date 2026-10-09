@@ -394,13 +394,20 @@ def tilt_shift(img, blur=100.0, gradient=600.0, y=0.55, angle=0.0):
     return np.clip(out + 0.5, 0, 255).astype(np.uint8)
 
 
+_VIG = {}
+
+
 def _vignette(h, w, amount, alpha, blur):
+    key = (h, w, amount, alpha, blur)
+    if key in _VIG:
+        return _VIG[key]
     X, Y = _base(h, w)
     outer = 1.414213 - amount * 1.414213
     dx = 0.5 - (X + 0.5) / w
     dy = (0.5 - (Y + 0.5) / h) * h / w
     darker = np.clip((outer - np.sqrt(dx * dx + dy * dy) * 1.414213) / (1e-5 + blur * 1.414213), 0, 1)
-    return darker + (1 - darker) * (1 - alpha)
+    _VIG[key] = (darker + (1 - darker) * (1 - alpha)).astype(np.float32)
+    return _VIG[key]
 
 
 def crt(img, t=0.0, curvature=1.0, line_width=1.0, line_contrast=0.25, vertical=False, noise=0.0, noise_size=1.0,
@@ -461,8 +468,11 @@ def old_film(img, seed=0.5, sepia=0.3, noise=0.12, noise_size=1.0, scratch=0.5, 
         m = (d < seed * 0.6 + 0.4) & (tine > 0)
         c = np.where(m[..., None], c * tn[..., None], c)
     if noise > 0:
-        px, py = np.floor(X / noise_size), np.floor(Y / noise_size)
-        n = _rand2(px * noise_size * seed, py * noise_size * seed) - 0.5
+        rng = np.random.default_rng(int(seed * 1e6))
+        nh, nw = int(np.ceil(h / noise_size)), int(np.ceil(w / noise_size))
+        n = rng.random((nh, nw), dtype=np.float32) - 0.5
+        if noise_size > 1:
+            n = cv2.resize(n, (w, h), interpolation=cv2.INTER_NEAREST)
         c = c + (n * noise)[..., None]
     return _to8(c)
 

@@ -27,6 +27,8 @@
 - پایان آهنگِ آروم و کلفت (مثل نوار کاست)
 - صدای ‎-14 LUFS
 
+**🛠️ موتور ادیت (`kit/engine.py`):** هر الگو تبدیل می‌شه به یه «نقشه»ی کوتاه (`projects/<شب>/recipe.py`): آهنگ و ضرب‌ها، شات‌ها روی ضرب، شماره‌ی ترنزیشن و افکت از پک پایین، متن‌ها، اسم آخر و لوپ. بقیه رو موتور خودش می‌سازه: کادر عمودی، اسلوموشن نرم، آیدی MEHRAB.7w7 سرِ جاش، صدای ‎-14، خروجی فورکی ۶۰ فریم و کاور. نقشه‌ی هر الگو توی پوشه‌ی `projects` می‌مونه که هر وقت همون ترند رو خواستی دوباره آماده باشه.
+
 **🎞️ پک ترنزیشن و افکت شماره‌دار (۱ تا ۵۹)** (از پروژه‌های متن‌باز گیت‌هاب، بدون فلش سفید و ذرات دون‌دونه) — دو ویدیوی نمونه با همین شماره‌ها توی پوشه‌ی `VFX_Pack_Showcase` ریپوئه (ویدیوی ۱: شماره‌ی ۱ تا ۲۴، ویدیوی ۲: شماره‌ی ۲۵ تا ۵۹). توی چت فقط بگو مثلاً «ترنزیشن ۳ و ۹ و افکت ۲۰»:
 
 | شماره | ترنزیشن | شماره | ترنزیشن / افکت |
@@ -84,6 +86,9 @@ edit_toolkit/
     audio_finish.py         trim on beat, tape-stop ending, anti-click fades, -14 LUFS
     finish.sh               mux + x264 encode (< 30 MiB for chat delivery)
     finish4k.sh             master delivery: 4K 2160x3840 upscale + encode, plus the 1080p chat copy
+    engine.py               RECIPE-DRIVEN EDIT ENGINE (start here for a new reference): recipe.py = song window +
+                            beat grid + shot list + transition / effect numbers + texts + end card + loop ->
+                            plan | stills | sheet | cover | render (2 workers, 4K60 master + 1080p copy, -14 LUFS)
     gltrans.py              41 scene transitions ported 1:1 from gl-transitions (MIT; page_curl BSD-3 HP),
                             GLSL -> numpy/cv2.remap: transition(name, a, b, p, ease=None); NUMBERS = number -> name for
                             all 59 pack items; CLI: list | demo A tA B tB name out.mp4 | sheet
@@ -92,6 +97,7 @@ edit_toolkit/
                             looks from pixi-filters + glfx.js (MIT): reflection, tilt_shift, crt, old_film, ascii_art,
                             cross_hatch, emboss, twist, lens_blur, ink, edge_work
   projects/
+    engine_demo/            6 s self-test recipe of the engine on repo footage (every engine path once)
     vfx_showcase/           numbered reels of the whole pack: showcase.py (#1-24), showcase2.py (#25-59)
                             -> VFX_Pack_Showcase/ in the repo root. Both render in parallel parts (2 workers, resumable).
                             The user picks effects BY THESE NUMBERS (tables at the top of this README, gltrans.NUMBERS).
@@ -121,6 +127,21 @@ MEHRAB.7w7", credits for the song and the clip sources); WhatsApp status = alway
 CHAT_START.txt, no title · every edit gets its own repo folder: cover + title/description text + the 4K video, plus a
 README section with raw/main direct links · update the night log in CHAT_START.txt · the user liked the tape-stop
 "deep" ending (Night 3) — offer/keep it · understand the reference's mechanism first and keep it (Night 4 lesson).
+
+### Edit engine (`kit/engine.py`) — the default way to build an edit (since Night 7)
+1. Analyse the reference (step 1 below), write down its mechanism and timeline in the recipe's docstring.
+2. `projects/<nightN_name>/recipe.py` with `RECIPE = dict(...)` — full key list in the engine docstring
+   (`python3 kit/engine.py`). Copy `projects/engine_demo/recipe.py` as a start. Paths: relative to `$WORK`,
+   `repo:...` for repo files. Song: `song` + `song_in` (a grid beat) + `beat` (period) or `grid` (beat list).
+3. Shots: `src, at, beats|dur, zoom, cx, cy, push, speed (number or ramp keys), fx [numbers|fn], trans (number),
+   tdur, text, pre [clean-up fns]`. Transitions are centred on the cut (p = 0.5 on the beat). Effects 18/19 =
+   default ramp / slow-mo; 20–24 and 49–59 per shot or as `look` for the whole video; `punch` = beat zoom pulses.
+4. Reference-specific graphics (charts, logo equations, portals …) = plain functions in the project folder used as
+   `fx` / `pre` / custom shots (`src` may be a still image; an fx may ignore the frame and draw everything).
+5. `plan` (timeline + source-length checks) → `stills` / `sheet` → look → `render` → `cover`. Outputs in
+   `$WORK/<name>/`: `<name>_4K_60fps.mp4`, `<name>_1080p_60fps.mp4`, `<name>_cover.jpg`.
+6. Speed: ~1 s per frame per worker with flow in-betweens + a global look; 2 workers (the box OOM-kills at
+   ~5.5 GB, each worker keeps ≤ 2 shots of 150 frames). A 15 s Short ≈ 8–10 min.
 
 ### Workflow
 1. **Reference**: copy to `$WORK/ref.mp4`.

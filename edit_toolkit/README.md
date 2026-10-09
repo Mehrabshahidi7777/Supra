@@ -27,7 +27,7 @@
 - پایان آهنگِ آروم و کلفت (مثل نوار کاست)
 - صدای ‎-14 LUFS
 
-**🎞️ پک ترنزیشن و افکت شماره‌دار** (از یه پروژه‌ی متن‌باز گیت‌هاب، بدون فلش سفید و ذرات دون‌دونه) — ویدیوی نمونه با همین شماره‌ها توی پوشه‌ی `VFX_Pack_Showcase` ریپوئه. توی چت فقط بگو مثلاً «ترنزیشن ۳ و ۹ و افکت ۲۰»:
+**🎞️ پک ترنزیشن و افکت شماره‌دار (۱ تا ۵۹)** (از پروژه‌های متن‌باز گیت‌هاب، بدون فلش سفید و ذرات دون‌دونه) — دو ویدیوی نمونه با همین شماره‌ها توی پوشه‌ی `VFX_Pack_Showcase` ریپوئه (ویدیوی ۱: شماره‌ی ۱ تا ۲۴، ویدیوی ۲: شماره‌ی ۲۵ تا ۵۹). توی چت فقط بگو مثلاً «ترنزیشن ۳ و ۹ و افکت ۲۰»:
 
 | شماره | ترنزیشن | شماره | ترنزیشن / افکت |
 |---|---|---|---|
@@ -43,6 +43,27 @@
 | ۱۰ | ذوب شدن رنگ‌ها | ۲۲ | ضربه‌ی لنز |
 | ۱۱ | چرخیدن از گوشه با تاری | ۲۳ | رد نور چراغ‌ها |
 | ۱۲ | فشرده شدن به یه خط | ۲۴ | نور رنگی گرم یا سرد |
+
+| شماره | ترنزیشن | شماره | ترنزیشن / افکت |
+|---|---|---|---|
+| ۲۵ | ورق خوردن از گوشه | ۴۳ | لبه‌های نورانی |
+| ۲۶ | شکستن و پرت شدن تکه‌ها | ۴۴ | موج بال پروانه |
+| ۲۷ | دیوار کاشی‌ها | ۴۵ | گلیچ رنگی لرزون |
+| ۲۸ | آب شدن ستون‌ها | ۴۶ | کشیده شدن دو نیمه |
+| ۲۹ | گلیچ تلویزیونی | ۴۷ | زوم به داخل و بیرون |
+| ۳۰ | ذوب شدن قسمت‌های تیره | ۴۸ | باد |
+| ۳۱ | افتادن و بالا پریدن | ۴۹ | انعکاس روی زمین خیس |
+| ۳۲ | موج رویایی | ۵۰ | مینیاتوری |
+| ۳۳ | تار و واضح شدن لنز | ۵۱ | تلویزیون قدیمی |
+| ۳۴ | زوم با تاری حرکت | ۵۲ | فیلم قدیمی |
+| ۳۵ | حلقه‌های زوم | ۵۳ | تصویر با حروف |
+| ۳۶ | چرخیدن و کوچیک شدن | ۵۴ | طراحی با خودکار |
+| ۳۷ | تا شدن | ۵۵ | برجسته‌ی فلزی |
+| ۳۸ | موج کاشی‌ها | ۵۶ | پیچ خوردن |
+| ۳۹ | شش‌ضلعی‌ها | ۵۷ | تاری لنز با نورهای گرد |
+| ۴۰ | حل شدن ابری | ۵۸ | خط‌دور جوهری |
+| ۴۱ | سوختن و باز شدن سوراخ | ۵۹ | خطوط نئونی |
+| ۴۲ | کالیدوسکوپ چرخان | | |
 
 ---
 
@@ -63,13 +84,17 @@ edit_toolkit/
     audio_finish.py         trim on beat, tape-stop ending, anti-click fades, -14 LUFS
     finish.sh               mux + x264 encode (< 30 MiB for chat delivery)
     finish4k.sh             master delivery: 4K 2160x3840 upscale + encode, plus the 1080p chat copy
-    gltrans.py              17 scene transitions ported 1:1 from gl-transitions (MIT, GLSL -> numpy/cv2.remap):
-                            transition(name, a, b, p, ease=None); CLI: list | demo A tA B tB name out.mp4 | sheet
+    gltrans.py              41 scene transitions ported 1:1 from gl-transitions (MIT; page_curl BSD-3 HP),
+                            GLSL -> numpy/cv2.remap: transition(name, a, b, p, ease=None); NUMBERS = number -> name for
+                            all 59 pack items; CLI: list | demo A tA B tB name out.mp4 | sheet
     vfx.py                  Clip (any time incl. between frames via DIS optical flow = smooth slow-mo), ramp_times /
-                            ramp_frames (speed ramps + shutter motion blur), tilt3d, shake, lens_warp, echo, light_leak
+                            ramp_frames (speed ramps + shutter motion blur), tilt3d, shake, lens_warp, echo, light_leak;
+                            looks from pixi-filters + glfx.js (MIT): reflection, tilt_shift, crt, old_film, ascii_art,
+                            cross_hatch, emboss, twist, lens_blur, ink, edge_work
   projects/
-    vfx_showcase/           numbered reel of the whole pack (showcase.py) -> VFX_Pack_Showcase/ in the repo root.
-                            The user picks effects BY THESE NUMBERS (table at the top of this README).
+    vfx_showcase/           numbered reels of the whole pack: showcase.py (#1-24), showcase2.py (#25-59)
+                            -> VFX_Pack_Showcase/ in the repo root. Both render in parallel parts (2 workers, resumable).
+                            The user picks effects BY THESE NUMBERS (tables at the top of this README, gltrans.NUMBERS).
     night3_smash_or_pass/   footage montage engine (render3.py) + shots.py + notes.md  ← template for car montages
     red_title_scene/        pure-graphics title scene (render.py) + song analysis data + notes.md
     night4_finger_rhythm/   "slide your finger along the rhythm": beat-locked finger dot + brush reveal montage (render4.py)
@@ -179,10 +204,24 @@ README section with raw/main direct links · update the night log in CHAT_START.
 | **#23** light trails (lighten echo of the last ~10 frames; 'mean' = ghost car) | `kit/vfx.py echo` |
 | **#24** soft colour leak, warm / teal / red, capped so it never goes white | `kit/vfx.py light_leak` |
 
+| **VFX pack #25–48** transitions: page_curl (back of the page shows A darkened; `back='paper'` = original white sheet), shatter, mosaic, doom_melt, datamosh (strobe removed), luma_melt, bounce, dreamy, defocus, cross_zoom, zoom_circles, rotate_vanish, fold, tiles_wave, hexagonalize, perlin, burn_out, power_kaleido, edge_glow, butterfly, glitch_memories, split_slide, zoom_in_out (`max_zoom` 0.8), wind | `kit/gltrans.py` (`NUMBERS`) |
+| **#49** wet-floor / water reflection under `boundary` (set it at the tyres), animate `t` for waves | `kit/vfx.py reflection` |
+| **#50** tilt-shift miniature (sharp band at `y`) | `kit/vfx.py tilt_shift` |
+| **#51** CRT TV lines + vignette, **#52** old film (sepia, scratches; new `seed` per frame) | `kit/vfx.py crt / old_film` |
+| **#53** ASCII glyph picture, **#54** pen cross-hatch, **#55** emboss metal, **#58** comic ink outlines | `kit/vfx.py ascii_art / cross_hatch / emboss / ink` |
+| **#56** local twist (animate `angle`) | `kit/vfx.py twist` |
+| **#57** lens blur with hexagon bokeh; `keep=mask` keeps the car sharp (mask from `cutout.py`) | `kit/vfx.py lens_blur` |
+| **#59** neon edge drawing (`tint` = line colour on black; without tint = glfx black/white) | `kit/vfx.py edge_work` |
+
 Speed at 1080x1920 on this 2-core box (ms per frame): window_slice 45, ripple 60, crosswarp 100, squeeze 110,
 swirl 110, morph 120, push_scaled 140, flyeye 140, book_flip 170, doorway / grid_flip / directional_warp ~200,
 swap 220, cube 270, revolve 590 (9 blur taps), kaleidoscope 650, tangent_blur 1100 (12 taps). A 0.6 s transition at
-60 fps = 36 frames, so even the heaviest is well under a minute.
+60 fps = 36 frames, so even the heaviest is well under a minute. Pack 2: doom_melt / luma_melt / dreamy / fold /
+zoom_in_out / wind 60–70, split_slide 90, bounce 100, zoom_circles / rotate_vanish 120, burn_out 170, tiles_wave /
+hexagonalize 200, perlin / glitch_memories 230, mosaic 240, defocus 500, butterfly 580, edge_glow 830,
+power_kaleido 1340, page_curl / shatter 1540, cross_zoom 1730 (16 taps), datamosh 2600. Looks: twist 40, edge_work /
+ink 110, emboss 140, reflection 150, cross_hatch 190, ascii_art 260, crt 380, tilt_shift 390, old_film 440,
+lens_blur 620. Memory: the box OOM-kills at ~5.5 GB — keep at most ~2 shots of 1080p frames in memory per process.
 
 ### Idea bank (mix with each new reference)
 - Smash or Pass with numbers (done, Night 3) → also works for characters or "which wheel / which colour".

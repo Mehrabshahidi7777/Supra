@@ -57,7 +57,7 @@ SHOTS = [
 ORDER = ['cube', 'crosswarp', 'doorway', 'swirl', 'swap', 'directional_warp', 'revolve', 'ripple', 'book_flip',
          'morph', 'tangent_blur', 'squeeze', 'grid_flip', 'flyeye', 'push_scaled', 'window_slice', 'kaleidoscope']
 HOLD = 0.40
-assert len(ORDER) == len(SHOTS) - 1 and set(ORDER) == set(G.NAMES)
+assert len(ORDER) == len(SHOTS) - 1 and set(ORDER) == set(G.NAMES[:17])
 
 
 def label(img, text, sub=None):
